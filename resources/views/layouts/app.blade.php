@@ -22,6 +22,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @if(!Auth::check())
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar-guest.css') }}">
+    @endif
 </head>
 <body>
 <div id="app @if(Auth::check()) ? 'wrapper' : '' @endif">
@@ -29,8 +33,9 @@
         @include('layouts.navbar-admin');
     @else
         @include('layouts.navbar');
+
+        @yield('content')
     @endif
-    @yield('content')
     </div>
 
     <!-- Scripts -->
