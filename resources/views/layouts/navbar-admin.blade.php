@@ -18,10 +18,10 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./user.html">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('Agenda') }}">
                             <i class="nc-icon nc-circle-09"></i>
-                            <p>User Profile</p>
+                            <p>Agenda</p>
                         </a>
                     </li>
                     <li>

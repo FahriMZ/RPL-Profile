@@ -27,6 +27,13 @@
     @if(!Auth::check())
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar-guest.css') }}">
     @endif
+
+    {{-- Ngubah warna icon font-awesome --}}
+    <style type="text/css">
+        i.fa {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 <div id="app @if(Auth::check()) ? 'wrapper' : '' @endif">
@@ -52,6 +59,9 @@
     <script src="{{ asset('light/js/plugins/bootstrap-switch.js') }}"></script>
     <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
     <script src="{{ asset('light/js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
+
+    {{-- Listener untuk sidebar --}}
+    
     @endif
 </body>
 </html>

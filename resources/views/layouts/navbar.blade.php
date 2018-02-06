@@ -19,17 +19,17 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="beranda">Beranda</a></li>
+                        <li><a href="/">Beranda</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                Informasi <i class="fa fa-caret-down"></i>
+                                Informasi <span class="fa fa-caret-down"></span>
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a href="berita">Berita</a></li>
-                                <li><a href="guru">Kolom Guru</a></li>
-                                <li><a href="agenda">Agenda</a></li>
-                                <li><a href="download">Download</a></li>
+                                <li><a href="/data/berita">Berita</a></li>
+                                <li><a href="/data/guru">Guru</a></li>
+                                <li><a href="/data/agenda">Agenda</a></li>
+                                <li><a href="/data/download">Download</a></li>
                             </ul>
                         </li>
                         <li><a href="pengumuman">Pengumuman</a></li>
