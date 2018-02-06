@@ -18,35 +18,26 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="beranda">Beranda</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                Informasi <i class="fa fa-caret-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="berita">Berita</a></li>
+                                <li><a href="guru">Kolom Guru</a></li>
+                                <li><a href="agenda">Agenda</a></li>
+                                <li><a href="download">Download</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pengumuman">Pengumuman</a></li>
+                        <li><a href="tamu">Buku Tamu</a></li>
+                    </ul>
+
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            {{-- <li><a href="{{ route('login') }}">Login</a></li> --}}
-                            {{-- <li><a href="{{ route('register') }}">Register</a></li> --}}
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->username }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('settings') }}">Settings</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
+                        <li><a href="{{ route('login') }}">Login</a></li>
                     </ul>
                 </div>
             </div>
