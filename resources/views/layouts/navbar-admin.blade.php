@@ -20,20 +20,20 @@
                     </li>
                     <li class="nav-item" id="agenda">
                         <a class="nav-link" href="{{ URL::to('Agenda') }}">
-                            <i class="nc-icon nc-circle-09"></i>
+                            <i class="nc-icon nc-bullet-list-67"></i>
                             <p>Agenda</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./table.html">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>Table List</p>
+                        <a class="nav-link" href="{{ URL::to('Berita') }}">
+                            <i class="nc-icon nc-paper-2"></i>
+                            <p>Berita</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./typography.html">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                        <a class="nav-link" href="{{ URL::to('Pesan') }}">
+                            <i class="nc-icon nc-email-83"></i>
+                            <p>Pesan</p>
                         </a>
                     </li>
                     <li class="nav-item">

@@ -20,7 +20,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('register', 'HomeController@index')->name('register');
 
+// Agenda
 Route::resource('Agenda', 'AgendaController');
-
 Route::get('/Agenda/{Agenda}/delete', 'AgendaController@destroy');
 Route::put('/Agenda/{Agenda}/edit', 'AgendaController@update');
+
+// Berita
+Route::resource('Berita', 'BeritaController');
+Route::get('/Berita/{Berita}/delete', 'BeritaController@destroy');
+Route::put('/Berita/{Berita}/edit', 'BeritaController@update');
+
+// Pesan
+Route::resource('Pesan', 'PesanController');
+Route::get('/Pesan/{Pesan}/delete', 'PesanController@destroy');

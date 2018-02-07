@@ -1,6 +1,6 @@
 /*
-SQLyog Ultimate v11.11 (32 bit)
-MySQL - 5.5.5-10.1.30-MariaDB : Database - db_webdin_05022018
+SQLyog Ultimate v12.09 (64 bit)
+MySQL - 10.1.26-MariaDB : Database - db_webdin_05022018
 *********************************************************************
 */
 
@@ -30,7 +30,7 @@ CREATE TABLE `agenda` (
 
 /*Data for the table `agenda` */
 
-insert  into `agenda`(`id`,`judul_agenda`,`tanggal_agenda`,`isi_agenda`) values (1,'Pemantapan Reguler','2018-01-01','Pemantapan Reguler akan diadakan sesuai jam mata pelajaran tersebut\r\nJadwal Reguler tidak dipungut biaya'),(2,'Ujian Sertifikasi Keahlian','2018-04-12','Ujian Sertifikasi Keahlian akan diadakan di kelas Bengkel TI pada tanggal 12-13 April 2018\r\n\r\nKet : Pengawasan dan Pengujian Eksternal\r\n'),(3,'UNBK','2018-04-02','Ujian Nasional Berbasis Komputer akan diadakan pada tanggal 2-5 April 2018 di kelas yang sudah ditentukan\r\n'),(4,'Pengumuman Kelulusan','2018-05-02','Hasil kelulusan akan dikirim Via POS'),(5,'Perpisahan','2018-05-03','Silahkan ditentukan sendiri gimana perpisahannya :v');
+insert  into `agenda`(`id`,`judul_agenda`,`tanggal_agenda`,`isi_agenda`) values (2,'Ujian Sertifikasi Keahlian','2018-04-12','Ujian Sertifikasi Keahlian akan diadakan di kelas Bengkel TI pada tanggal 12-13 April 2018\r\n\r\nKet : Pengawasan dan Pengujian Eksternal\r\n'),(3,'UNBK','2018-04-02','Ujian Nasional Berbasis Komputer akan diadakan pada tanggal 2-5 April 2018 di kelas yang sudah ditentukan\r\n'),(4,'Pengumuman Kelulusan','2018-05-02','Hasil kelulusan akan dikirim Via POS'),(5,'Perpisahan','2018-05-03','Silahkan ditentukan sendiri gimana perpisahannya :v');
 
 /*Table structure for table `berita` */
 
@@ -46,25 +46,22 @@ CREATE TABLE `berita` (
 
 /*Data for the table `berita` */
 
-insert  into `berita`(`id`,`judul_berita`,`tanggal_berita`,`isi_berita`) values (1,'Penyampaian Materi PIK dan Kesehatan Reproduksi dari Dinas Pengendalian Produk dan Keluarga','2017-11-07','Kesehatan reproduksi menurut hasil ICPD 1994 di Kairo adalah keadaan sempurna fisik, mental dan kesejahteraan sosial dan tidak semata-mata ketiadaan penyakit atau kelemahan, dalam segala hal yang berkaitan dengan sistem reproduksi dan fungsi dan proses. \r\nBerdasarkan studi di 3 kota Jawa Barat (2009), perempuan remaja lebih takut pada resiko sosial (antara lain: takut kehilangan keperawanan/ virginitas, takut hamil di luar nikah karena jadi bahan gunjingan masyarakat) dibanding resiko seksual, khususnya menyangkut kesehatan reproduksi dan kesehatan seksualnya.\r\nPadahal kelompok usia remaja merupakan usia yang paling rentan terinfeksi HIV/AIDs dan Penyakit Menular Seksual (PMS) lainnya. Bahkan, dalam jangka waktu tertentu, ketika perempuan remaja menjadi ibu hamil, maka kehamilannya dapat mengancam kelangsungan hidup janin/bayinya. \r\nPada hari rabu tanggal 3 November 2017, Dinas Pengendalian Produk dan Keluarga mengunjungi SMKN 11 Bandung untuk penyampaian materi tentang PIK dan Kesehatan Reproduksi. Penyampaian materi ini juga membahas tentang bagaimana agar menjaga kesehatan reproduksi yang di mulai dari remaja agar tercegah dari penyakit reproduksi di kemudian hari.'),(2,'Kegiatan penjaringan kesehatan siswa kelas x pemeriksaan kadar hemoglobin','2017-01-01','Hemoglobin adalah metaloprotein (protein yang mengandung zat besi) di dalam sel darah merah yang berfungsi sebagai pengangkut oksigen dari paru-paru ke seluruh tubuh, pada mamalia dan hewan lainnya. Hemoglobin juga pengusung karbon dioksida kembali menuju paru-paru untuk dihembuskan keluar tubuh. Molekul hemoglobin terdiri dari globin, apoprotein, dan empat gugus heme, suatu molekul organik dengan satu atom besi.\r\nKegiatan ini bertujuan untuk mengukur bagaimana daya tahan tubuh siswa yang juga termasuk dalam program Sekolah Sehat SMKN 11 Bandung.');
+insert  into `berita`(`id`,`judul_berita`,`tanggal_berita`,`isi_berita`) values (2,'Kegiatan penjaringan kesehatan siswa kelas x pemeriksaan kadar hemoglobin','2017-01-01','Hemoglobin adalah metaloprotein (protein yang mengandung zat besi) di dalam sel darah merah yang berfungsi sebagai pengangkut oksigen dari paru-paru ke seluruh tubuh, pada mamalia dan hewan lainnya. Hemoglobin juga pengusung karbon dioksida kembali menuju paru-paru untuk dihembuskan keluar tubuh. Molekul hemoglobin terdiri dari globin, apoprotein, dan empat gugus heme, suatu molekul organik dengan satu atom besi.\r\nKegiatan ini bertujuan untuk mengukur bagaimana daya tahan tubuh siswa yang juga termasuk dalam program Sekolah Sehat SMKN 11 Bandung.');
 
-/*Table structure for table `buku_tamu` */
+/*Table structure for table `buku_pesan` */
 
-DROP TABLE IF EXISTS `buku_tamu`;
+DROP TABLE IF EXISTS `buku_pesan`;
 
-CREATE TABLE `buku_tamu` (
+CREATE TABLE `buku_pesan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_tamu` varchar(100) NOT NULL,
-  `asal_sekolah` varchar(100) DEFAULT NULL,
-  `asal_kelas` varchar(100) DEFAULT NULL,
-  `tanggal_masuk` date DEFAULT NULL,
-  `tanggal_keluar` date DEFAULT NULL,
+  `nama` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `pesan` text NOT NULL,
+  `dibuat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-/*Data for the table `buku_tamu` */
-
-insert  into `buku_tamu`(`id`,`nama_tamu`,`asal_sekolah`,`asal_kelas`,`tanggal_masuk`,`tanggal_keluar`) values (1,'James','New York University','Middleclass','2018-02-06','2018-02-08'),(2,'Johnson','DC University','Highclass','2018-02-07','2018-02-08');
+/*Data for the table `buku_pesan` */
 
 /*Table structure for table `file_download` */
 
@@ -178,7 +175,7 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values (1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','bl9qtlXe8xcVvpxrTMc3z1dIz1aOfxfA5rZJFqmMmbwnuUcRyGQx4C9tpvxk','2018-02-05 06:09:22','2018-02-05 06:09:22');
+insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values (1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','2CUBbhjyJVJB5GgIpqgKXGP7bsAJjIdzzdv6QNKdrWldcXsbUPOFQgXClloS','2018-02-05 06:09:22','2018-02-05 06:09:22');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
