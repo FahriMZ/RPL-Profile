@@ -73,7 +73,11 @@ class AgendaController extends Controller
     public function show($id)
     {
         $agenda = Agenda::find($id);
-        return view('agenda.show', compact('agenda'));
+        if($agenda) {
+            return view('agenda.show', compact('agenda'));
+        }else{
+            return redirect('Agenda')->with('error', 'Data tidak ditemukan');
+        }
     }
 
     /**
@@ -84,7 +88,12 @@ class AgendaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $agenda = Agenda::find($id);
+        if($agenda) {
+            return view('agenda.edit', compact('agenda'));
+        }else{
+            return redirect('Agenda')->with('error', 'Data tidak ditemukan');
+        }
     }
 
     /**
@@ -96,7 +105,17 @@ class AgendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agenda = Agenda::find($id);
+        // return $agenda;
+        $agenda->judul_agenda = $request['judul_agenda'];
+        $agenda->tanggal_agenda = $request['tanggal_agenda'];
+        $agenda->isi_agenda = $request['isi_agenda'];
+
+        if($agenda->save()) {
+            return redirect('Agenda')->with('success', 'Agenda berhasil diubah');
+        }else{
+            return redirect('Agenda/'.$agenda->id.'edit')->with('error', 'Edit data gagal');
+        }
     }
 
     /**
@@ -108,9 +127,12 @@ class AgendaController extends Controller
     public function destroy($id)
     {
         $agenda = Agenda::find($id);
-        $agenda->delete();
+        if($agenda->delete()) {
+            return redirect('Agenda')->with('success', 'Agenda berhasil dihapus!');    
+        }else{
+            return redirect('Agenda/'.$id)->with('error', 'Agenda gagal dihapus!');
+        }
 
-        Session::flash('success', 'Agenda berhasil dihapus!');
-        return Redirect::to('Agenda');
+        
     }
 }

@@ -22,4 +22,5 @@ Route::get('register', 'HomeController@index')->name('register');
 
 Route::resource('Agenda', 'AgendaController');
 
-Route::get('/Agenda/{id}/delete', 'AgendaController@destroy');
+Route::get('/Agenda/{Agenda}/delete', 'AgendaController@destroy');
+Route::put('/Agenda/{Agenda}/edit', 'AgendaController@update');
