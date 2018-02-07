@@ -25,5 +25,5 @@
 		    </tbody>
 		</table>
 
-		<a class="btn btn-success pull-right" style="margin-bottom:10px"><i class="fa fa-plus"></i></a>
+		<a class="btn btn-success pull-right" href="{{ URL::to('Agenda/create') }}" style="margin-bottom:10px"><i class="fa fa-plus"></i></a>
 @endsection

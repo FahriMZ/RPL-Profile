@@ -14,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
 
+    {{-- Alerts --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('sweet-alert2/css/sweetalert2.min.css') }}">
+
     {{-- Custom --}}
     @if(Auth::check())
     <!-- CSS Files -->
@@ -51,6 +54,11 @@
 
     <script src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
     
+    {{-- Alert --}}
+    <script src="{{ asset('sweet-alert2/js/sweetalert2.js') }}"></script>
+    
+    @include('layouts.messages')
+
     {{-- Custom --}}
     @if(Auth::check())
     <script src="{{ asset('light/js/core/popper.min.js') }}" type="text/javascript"></script>
@@ -61,7 +69,7 @@
     <script src="{{ asset('light/js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
 
     {{-- Listener untuk sidebar --}}
-    
+        
     @endif
 </body>
 </html>

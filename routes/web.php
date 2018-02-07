@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('register', 'HomeController@index')->name('register');
 
 Route::resource('Agenda', 'AgendaController');
+
+Route::get('/Agenda/{id}/delete', 'AgendaController@destroy');

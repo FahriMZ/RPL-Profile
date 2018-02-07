@@ -31,7 +31,7 @@ class AgendaController extends Controller
      */
     public function create()
     {
-        //
+        return view('agenda.create');
     }
 
     /**
@@ -42,7 +42,26 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([
+            'judul_agenda'      => 'required|min:10|unique:agenda',
+            'tanggal_agenda'    => 'required',
+        ]);
+
+        // process the login
+        if (!$validator) {
+            return Redirect::to('Agenda/create')
+                ->withErrors($validator)
+                ->withInput(Request::except('password'));
+        }else{
+            $agenda = new Agenda;
+            $agenda->judul_agenda = $request['judul_agenda'];
+            $agenda->tanggal_agenda = $request['tanggal_agenda'];
+            $agenda->isi_agenda = $request['isi_agenda'];
+
+            $agenda->save();
+
+            return redirect('Agenda')->with('success', 'Agenda ditambahkan');
+        }
     }
 
     /**
@@ -88,6 +107,10 @@ class AgendaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $agenda = Agenda::find($id);
+        $agenda->delete();
+
+        Session::flash('success', 'Agenda berhasil dihapus!');
+        return Redirect::to('Agenda');
     }
 }
