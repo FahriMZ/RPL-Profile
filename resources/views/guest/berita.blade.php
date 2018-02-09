@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="searchform-container">
-    {{-- <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div> --}}
+    <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div>
   </div>
   <div class="clear"></div>
   <div class="page">
@@ -34,9 +34,12 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1>IMAGE</h1>
+              <img src="images/.jpeg" alt="di pdf katanya gbr ksng" />
             </li>
-          </ul>
+            <li>
+              <p>.</p>
+            
         </div>
         <div class="dark-panel-bottom"></div>
       </div>
@@ -48,7 +51,7 @@
             <li><a href="#">+ Berita</a></li>
             <li><a href="#">+ Kolom</a></li>
             <li><a href="#">+ Guru</a></li>
-            <li><a href="{{ route('agenda') }}">+ Agenda</a></li>
+            <li><a href="#">+ Agenda</a></li>
             <li><a href="#">+ Download</a></li>
             <li class="no-border"><a href="#">+ Struktur Organisasi</a></li>
           </ul>
@@ -76,15 +79,34 @@
     <div class="right-column">
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>Info Profile RPL</h1>
+          <h2>Rekayasa Perangkat Lunak Di SMKN 11 Bandung. </h2>
+        </div>
+        <div class="right-column-content-img-left"> <img src="images/123nm.png" alt="banner" /> </div>
+        <div class="right-column-content-content">
+          <p><a href="#">Profile RPL</a></p>
+          <p>Berikut Ini penjelasan mengenai profile RPL di SMKN 11 Bandung.</p>
+          <div class="button"><a href="#" >More Info</a></div>
+        </div>
+      </div>
+      <div class="right-column-content">
+        <div class="right-column-content-heading">
+          <h1>Info Profile Guru RPL</h1>
+          <h2>Profile Guru RPL di SMKN 11 Bandung. </h2>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <p>Di SMKN 11 Bandung terdapat jurusan Rekayasa Perangkat Lunak yang bisa disebut juga dengan SoftwareEngineer.Ini adalah<a href="#">Profile Guru RPL</a> ada WEBDIN,ANDROID,DATABASE................ </p>
+          <p>Nah berikut ini beberapa profil guru RPL di SMKN 11 Bandung.</p>
+          <div class="button"><a href="#" >More Info</a></div>
         </div>
-        <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
+        <div class="right-column-content-img-right"> <img src="images/yudi.jpg" alt="banner" /> </div>
         <div class="clear right-cloumn-content-border"></div>
+        <div class="right-column-content-content">
+          <h4>Kurikulum RPL</h4>
+          <p>. </p>
+          <div class="button"><a href="#" >More Info</a></div>
+        </div>
+        <div class="right-column-content-img-right right-column-content-img-right-margin-bottom-none"> <img src="images/img-3.png" alt="banner" /> </div>
       </div>
     </div>
   </div>
@@ -93,7 +115,7 @@
   <div class="footer-top"></div>
   <div class="footer-center">
     <div class="footer-content-left">
-      <h1>Tentang</h1>
+      <h1>About</h1>
       <h2><a href="http://smkn11bdg.sch.id" target="_blank">SMKN 11 Bandung</a></h2>
       <p>SMK Negeri 11 Bandung merupakan salah satu Sekolah Menengah Kejuruan Negeri yang ada di Provinsi Jawa Barat, Indonesia, tepatnya di kota Bandung. Sama dengan sekolah menengah pada umumnya di Indonesia, masa pendidikan sekolah di SMK Negeri 11 Bandung ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII. Sekolah yang memiliki visi menjadi SMK mandiri yang berbudaya lingkungan dengan berbasis ICT ini mewajibkan siswa-siswinya untuk mempelajari bahasa internasional seperti Bahasa Inggris, Bahasa Jepang, Bahasa Mandarin serta menyediakan ekstrakulikuler Bahasa Perancis. Sekolah ini menerapkan sistem moving class, yaitu sistem belajar mengajar dimana siswa-siswi yang mendatangi guru di kelas. </p>
     </div>
@@ -110,7 +132,6 @@
       </p>
       <h3>Email: <a href="mailto:wsetiawan135790@gmail.com">wsetiawan135790@gmail.com</a></h3>
       <h3>Phone: 0822-1515-2259</h3>
-      <br>
     </div>
   </div>
   <div class="footer-bottom"></div>

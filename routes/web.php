@@ -43,3 +43,4 @@ Route::put('/File/{File}/edit', 'FileController@update');
 // Guest
 Route::get('pengumuman', 'HomeController@index')->name('pengumuman');
 Route::get('tamu', 'HomeController@index')->name('tamu');
+Route::get('agenda', 'HomeController@agenda')->name('agenda');

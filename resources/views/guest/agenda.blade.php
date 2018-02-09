@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="searchform-container">
-    {{-- <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div> --}}
+    <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div>
   </div>
   <div class="clear"></div>
   <div class="page">
@@ -34,9 +34,12 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1>IMAGE</h1>
+              <img src="images/.jpeg" alt="di pdf katanya gbr ksng" />
             </li>
-          </ul>
+            <li>
+              <p>.</p>
+            
         </div>
         <div class="dark-panel-bottom"></div>
       </div>
@@ -74,26 +77,28 @@
       </div>
     </div>
     <div class="right-column">
+    @if($agenda)
+      @foreach($agenda as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>{{ $data->judul_agenda }}</h1>
+          <h2>{{ $data->tanggal_agenda }}</h2>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <p>{{ $data->isi_agenda }}</p>
         </div>
-        <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
-        <div class="clear right-cloumn-content-border"></div>
       </div>
-    </div>
+      @endforeach
+    @else
+        <p>No Data is Available.</p>
+    @endif
   </div>
 </div>
 <div class="footer-wrapper">
   <div class="footer-top"></div>
   <div class="footer-center">
     <div class="footer-content-left">
-      <h1>Tentang</h1>
+      <h1>About</h1>
       <h2><a href="http://smkn11bdg.sch.id" target="_blank">SMKN 11 Bandung</a></h2>
       <p>SMK Negeri 11 Bandung merupakan salah satu Sekolah Menengah Kejuruan Negeri yang ada di Provinsi Jawa Barat, Indonesia, tepatnya di kota Bandung. Sama dengan sekolah menengah pada umumnya di Indonesia, masa pendidikan sekolah di SMK Negeri 11 Bandung ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII. Sekolah yang memiliki visi menjadi SMK mandiri yang berbudaya lingkungan dengan berbasis ICT ini mewajibkan siswa-siswinya untuk mempelajari bahasa internasional seperti Bahasa Inggris, Bahasa Jepang, Bahasa Mandarin serta menyediakan ekstrakulikuler Bahasa Perancis. Sekolah ini menerapkan sistem moving class, yaitu sistem belajar mengajar dimana siswa-siswi yang mendatangi guru di kelas. </p>
     </div>
@@ -110,7 +115,6 @@
       </p>
       <h3>Email: <a href="mailto:wsetiawan135790@gmail.com">wsetiawan135790@gmail.com</a></h3>
       <h3>Phone: 0822-1515-2259</h3>
-      <br>
     </div>
   </div>
   <div class="footer-bottom"></div>
