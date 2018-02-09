@@ -22,13 +22,15 @@
     <!-- CSS Files -->
     <link href="{{ asset('light/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('light/css/light-bootstrap-dashboard.css?v=2.0.1') }}" rel="stylesheet" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- App.css --}}
+    @yield('css')
 
     @if(!Auth::check())
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar-guest.css') }}">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/>
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" />
     @endif
 
     {{-- Ngubah warna icon font-awesome --}}
@@ -43,11 +45,10 @@
     @if(Auth::check())
         @include('layouts.navbar-admin');
     @else
-        @include('layouts.navbar');
-
+    {{-- @include('layouts.navbar'); --}}
         @yield('content')
     @endif
-    </div>
+</div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

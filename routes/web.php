@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('register', 'HomeController@index')->name('register');
 
 // Agenda
@@ -33,3 +34,12 @@ Route::put('/Berita/{Berita}/edit', 'BeritaController@update');
 // Pesan
 Route::resource('Pesan', 'PesanController');
 Route::get('/Pesan/{Pesan}/delete', 'PesanController@destroy');
+
+// File
+Route::resource('File', 'FileController');
+Route::get('/File/{File}/delete', 'FileController@destroy');
+Route::put('/File/{File}/edit', 'FileController@update');
+
+// Guest
+Route::get('pengumuman', 'HomeController@index')->name('pengumuman');
+Route::get('tamu', 'HomeController@index')->name('tamu');

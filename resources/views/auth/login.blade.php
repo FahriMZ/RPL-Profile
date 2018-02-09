@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+@section('css')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
-<div class="container">
+<div class="container" style="padding-top: 175px;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
