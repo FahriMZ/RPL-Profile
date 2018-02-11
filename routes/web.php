@@ -40,6 +40,11 @@ Route::resource('File', 'FileController');
 Route::get('/File/{File}/delete', 'FileController@destroy');
 Route::put('/File/{File}/edit', 'FileController@update');
 
+// Pengumuman
+Route::resource('Pengumuman', 'PengumumanController');
+Route::get('/Pengumuman/{Pengumuman}/delete', 'PengumumanController@destroy');
+Route::put('/Pengumuman/{Pengumuman}/edit', 'PengumumanController@update');
+
 // Guest
 Route::get('pengumuman', 'HomeController@pengumuman')->name('pengumuman');
 

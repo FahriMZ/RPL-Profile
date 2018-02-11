@@ -50,7 +50,11 @@ form {
         <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
         <li><a href="{{ route('tamu') }}" class="active">Buku Tamu</a></li>
         
+        @if(Auth::check())
+        <li class="nobg"><a href="{{ route('admin') }}">Admin</a></li>
+        @else
         <li class="nobg"><a href="{{ route('login') }}">Login</a></li>
+        @endif
       </ul>
     </div>
   </div>

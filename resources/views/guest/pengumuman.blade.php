@@ -17,7 +17,11 @@
         <li><a href="{{ route('pengumuman') }}" class="active">Pengumuman</a></li>
         <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
         
+        @if(Auth::check())
+        <li class="nobg"><a href="{{ route('admin') }}">Admin</a></li>
+        @else
         <li class="nobg"><a href="{{ route('login') }}">Login</a></li>
+        @endif
       </ul>
     </div>
   </div>

@@ -13,7 +13,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item" id="home">
-                        <a class="nav-link" href="/">
+                        <a class="nav-link" href="/admin">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -43,9 +43,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./icons.html">
-                            <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
+                        <a class="nav-link" href="{{ URL::to('Pengumuman') }}">
+                            <i class="nc-icon nc-bell-55"></i>
+                            <p>Pengumuman</p>
                         </a>
                     </li>
                 </ul>
