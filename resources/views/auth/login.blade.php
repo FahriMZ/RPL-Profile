@@ -64,6 +64,9 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="pull-right">
+                            <a href="/">< Kembali ></a>
+                        </div>
                     </form>
                 </div>
             </div>
