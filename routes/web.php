@@ -41,6 +41,15 @@ Route::get('/File/{File}/delete', 'FileController@destroy');
 Route::put('/File/{File}/edit', 'FileController@update');
 
 // Guest
-Route::get('pengumuman', 'HomeController@index')->name('pengumuman');
-Route::get('tamu', 'HomeController@index')->name('tamu');
+Route::get('pengumuman', 'HomeController@pengumuman')->name('pengumuman');
+
+Route::get('tamu', 'HomeController@tamu')->name('tamu');
+Route::post('tamu', 'PesanController@storeAsGuest')->name('tamu');
+
 Route::get('agenda', 'HomeController@agenda')->name('agenda');
+Route::get('berita', 'HomeController@berita')->name('berita');
+Route::get('guru', 'HomeController@guru')->name('guru');
+Route::get('download', 'HomeController@download')->name('download');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -34,7 +34,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1 align="center">DOWNLOAD</h1>
             </li>
           </ul>
         </div>
@@ -73,18 +73,19 @@
       </div>
     </div>
     <div class="right-column">
+      @foreach($file as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>{{ $data->nama_file }}</h1>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <p>{{ $data->deskripsi_file }}</p>
+          <a href="{{ $data->link_file }}" target="_blank">Download File</a>
         </div>
         <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
         <div class="clear right-cloumn-content-border"></div>
       </div>
+      @endforeach
     </div>
   </div>
 </div>

@@ -330,6 +330,12 @@ Right Column Styles Start
 	height:auto;
 }
 
+.column-content {
+	float:left;
+	/*width:350px;*/
+	margin-top:40px;
+}
+
 .right-column-content {
 	width:560px;
 	padding:30px;

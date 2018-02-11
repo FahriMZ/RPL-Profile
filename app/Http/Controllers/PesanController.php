@@ -63,6 +63,18 @@ class PesanController extends Controller
         }
     }
 
+    public function storeAsGuest(Request $request)
+    {
+            $pesan = new Pesan;
+            $pesan->nama =  $request['nama'];
+            $pesan->email = $request['email'];
+            $pesan->pesan = $request['pesan'];
+
+            $pesan->save();
+
+            return redirect('tamu')->with('success', 'Pesan ditambahkan.<br>Terima kasih atas masukannya :)');
+    }
+
     /**
      * Display the specified resource.
      *

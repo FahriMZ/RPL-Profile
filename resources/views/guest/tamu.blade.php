@@ -5,6 +5,39 @@
 <title>RPL Profile</title>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="{{ asset('sweet-alert2/css/sweetalert2.min.css') }}">
+<style>
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: indianred;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+form {
+    /*background-color: #f2f2f2;*/
+    /*padding-left: 111px;*/
+}
+</style>
 </head>
 <body>
 <div class="wrapper">
@@ -12,10 +45,10 @@
     <div class="logo">Profile RPL</div>
     <div class="menu">
       <ul>
-        <li><a href="/" class="active">Beranda</a></li>
+        <li><a href="/">Beranda</a></li>
         
         <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
-        <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
+        <li><a href="{{ route('tamu') }}" class="active">Buku Tamu</a></li>
         
         <li class="nobg"><a href="{{ route('login') }}">Login</a></li>
       </ul>
@@ -34,7 +67,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1 align="center">BUKU TAMU</h1>
             </li>
           </ul>
         </div>
@@ -75,16 +108,27 @@
     <div class="right-column">
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>Kirim Pesan</h1>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <form action="{{ route('tamu') }}" method="POST">
+          {{ csrf_field() }}
+            <div>
+                <label>Nama</label>
+                <input type="text" name="nama">
+            </div>
+            <div>
+                <label>E-Mail</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label>Pesan</label>
+                <textarea name="pesan"></textarea>
+            </div>
+
+            <button type="submit">Kirim</button>
+          </form>
         </div>
-        <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
-        <div class="clear right-cloumn-content-border"></div>
-      </div>
     </div>
   </div>
 </div>
@@ -117,5 +161,11 @@
 <div class="clear"></div>
 <div class="copyrights">Copyright (c) WEMALRIDE. Design by WeMalRiDe Company. 
 </div>
+
+<script src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
+    
+{{-- Alert --}}
+<script src="{{ asset('sweet-alert2/js/sweetalert2.js') }}"></script>
+@include('layouts.messages')
 </body>
 </html>

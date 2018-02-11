@@ -11,7 +11,7 @@
 @if(session('success'))
     <script type="text/javascript">
         $(document).ready(function() {
-            swal('Success', '{{ session('success') }}', 'success');
+            swal('Success', '{!! session('success') !!}', 'success');
         });
     </script>
 @endif

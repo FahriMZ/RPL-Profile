@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="searchform-container">
-    <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div>
+    <!-- <div class="searchform-content"><h1><center>Profile RPL SMKN 11 Bandung</center></h1></div> -->
   </div>
   <div class="clear"></div>
   <div class="page">
@@ -34,12 +34,9 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1>IMAGE</h1>
-              <img src="images/.jpeg" alt="di pdf katanya gbr ksng" />
+              <h1 align="center">Agenda</h1>
             </li>
-            <li>
-              <p>.</p>
-            
+          </ul>
         </div>
         <div class="dark-panel-bottom"></div>
       </div>
@@ -48,11 +45,10 @@
         <div class="light-panel-center">
           <h1>Informasi</h1>
           <ul>
-            <li><a href="#">+ Berita</a></li>
-            <li><a href="#">+ Kolom</a></li>
-            <li><a href="#">+ Guru</a></li>
+            <li><a href="{{ route('berita') }}">+ Berita</a></li>
+            <li><a href="{{ route('guru') }}">+Daftar Guru</a></li>
             <li><a href="{{ route('agenda') }}">+ Agenda</a></li>
-            <li><a href="#">+ Download</a></li>
+            <li><a href="{{ route('download') }}">+ Download</a></li>
             <li class="no-border"><a href="#">+ Struktur Organisasi</a></li>
           </ul>
         </div>
@@ -92,13 +88,14 @@
     @else
         <p>No Data is Available.</p>
     @endif
+    </div>
   </div>
 </div>
 <div class="footer-wrapper">
   <div class="footer-top"></div>
   <div class="footer-center">
     <div class="footer-content-left">
-      <h1>About</h1>
+      <h1>Tentang</h1>
       <h2><a href="http://smkn11bdg.sch.id" target="_blank">SMKN 11 Bandung</a></h2>
       <p>SMK Negeri 11 Bandung merupakan salah satu Sekolah Menengah Kejuruan Negeri yang ada di Provinsi Jawa Barat, Indonesia, tepatnya di kota Bandung. Sama dengan sekolah menengah pada umumnya di Indonesia, masa pendidikan sekolah di SMK Negeri 11 Bandung ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII. Sekolah yang memiliki visi menjadi SMK mandiri yang berbudaya lingkungan dengan berbasis ICT ini mewajibkan siswa-siswinya untuk mempelajari bahasa internasional seperti Bahasa Inggris, Bahasa Jepang, Bahasa Mandarin serta menyediakan ekstrakulikuler Bahasa Perancis. Sekolah ini menerapkan sistem moving class, yaitu sistem belajar mengajar dimana siswa-siswi yang mendatangi guru di kelas. </p>
     </div>
@@ -115,6 +112,7 @@
       </p>
       <h3>Email: <a href="mailto:wsetiawan135790@gmail.com">wsetiawan135790@gmail.com</a></h3>
       <h3>Phone: 0822-1515-2259</h3>
+      <br>
     </div>
   </div>
   <div class="footer-bottom"></div>

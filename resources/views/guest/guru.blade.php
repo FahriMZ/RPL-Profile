@@ -34,7 +34,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1 align="center">DAFTAR GURU</h1>
             </li>
           </ul>
         </div>
@@ -73,18 +73,25 @@
       </div>
     </div>
     <div class="right-column">
+      @foreach($guru as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>Data Guru Jurusan RPL</h1>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <pre>
+NIP         : @if($data->nip) {{$data->nip}} @else NULL @endif
+<br>
+Nama        : @if($data->nama_guru) {{$data->nama_guru}} @else <i>NULL</i> @endif
+<br>
+Jabatan     : @if($data->jabatan_guru) {{$data->jabatan_guru}} @else <i>NULL</i> @endif
+
+          </pre>
         </div>
         <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
         <div class="clear right-cloumn-content-border"></div>
       </div>
+      @endforeach
     </div>
   </div>
 </div>

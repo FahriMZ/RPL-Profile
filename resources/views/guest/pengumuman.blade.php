@@ -12,9 +12,9 @@
     <div class="logo">Profile RPL</div>
     <div class="menu">
       <ul>
-        <li><a href="/" class="active">Beranda</a></li>
+        <li><a href="/">Beranda</a></li>
         
-        <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
+        <li><a href="{{ route('pengumuman') }}" class="active">Pengumuman</a></li>
         <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
         
         <li class="nobg"><a href="{{ route('login') }}">Login</a></li>
@@ -34,7 +34,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Let's Code</h1>
+              <h1 align="center">PENGUMUMAN</h1>
             </li>
           </ul>
         </div>
@@ -73,18 +73,22 @@
       </div>
     </div>
     <div class="right-column">
+    @if($pengumuman)
+      @foreach($pengumuman as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>RPL ?</h1>
+          <h1>{{ $data->judul_pengumuman }}</h1>
+          <br>
+          <h2>{{ $data->jam_pengumuman }}, {{ $data->tanggal_pengumuman }}</h2>
         </div>
         <div class="right-column-content-content">
-          <p>
-            Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.
-          </p>
+          <p>{!!$data->isi_pengumuman !!}</p>
         </div>
-        <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
-        <div class="clear right-cloumn-content-border"></div>
       </div>
+      @endforeach
+    @else
+        <p>No Data is Available.</p>
+    @endif
     </div>
   </div>
 </div>
