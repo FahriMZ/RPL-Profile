@@ -27,8 +27,12 @@
                     </td>
                 </tr>
             @endforeach
+
             </tbody>
         </table>
+        <div class="pull-right" style="padding-right: 25px;">
+            {{ $pesan->links() }}
+        </div>
         </div>
     </div>
 

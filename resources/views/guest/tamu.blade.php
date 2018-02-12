@@ -83,10 +83,10 @@ form {
           <h1>Informasi</h1>
           <ul>
             <li><a href="{{ route('berita') }}">+ Berita</a></li>
-            <li><a href="{{ route('guru') }}">+Daftar Guru</a></li>
+            <li><a href="{{ route('guru') }}">+ Daftar Guru</a></li>
             <li><a href="{{ route('agenda') }}">+ Agenda</a></li>
             <li><a href="{{ route('download') }}">+ Download</a></li>
-            <li class="no-border"><a href="#">+ Struktur Organisasi</a></li>
+            <li class="no-border"><a href=" {{ route('organisasi') }}">+ Struktur Organisasi</a></li>
           </ul>
         </div>
         <div class="light-panel-bottom"></div>

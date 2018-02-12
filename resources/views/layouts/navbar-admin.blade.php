@@ -1,5 +1,5 @@
 {{-- Sidebar --}}
-        <div class="sidebar" data-image="{{ asset('img/sidebar-4.jpg') }}" data-color="blue" style="position: fixed; z-index: 99999999999999">
+        <div class="sidebar" data-image="{{ asset('images/sidebar-4.jpg') }}" data-color="blue" style="position: fixed; z-index: 99999">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -55,7 +55,7 @@
         <!-- Navbar -->
             <nav class="col-md-offset-2 col-md-10 navbar navbar-fixed-top navbar-expand-lg" style="padding-left: 50px" color-on-scroll="500">
                 <div class=" container-fluid  ">
-                    <a class="navbar-brand" href="/"> Dashboard </a>
+                    <a class="navbar-brand" href="/" disabled>{{Request::segment(1)}}</a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>

@@ -19,7 +19,7 @@ class PesanController extends Controller
      */
     public function index()
     {
-        $pesan = Pesan::All();
+        $pesan = Pesan::simplePaginate(5);
         return view('pesan.index', compact('pesan'));
     }
 

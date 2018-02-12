@@ -55,3 +55,4 @@ Route::get('agenda', 'HomeController@agenda')->name('agenda');
 Route::get('berita', 'HomeController@berita')->name('berita');
 Route::get('guru', 'HomeController@guru')->name('guru');
 Route::get('download', 'HomeController@download')->name('download');
+Route::get('organisasi', 'HomeController@organisasi')->name('organisasi');

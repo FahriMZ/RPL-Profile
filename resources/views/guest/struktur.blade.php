@@ -5,6 +5,25 @@
 <title>RPL Profile</title>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+  .SO{
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    width: inherit;
+    height: inherit;
+  }
+
+  .SO .jabatan {
+    border-bottom: 2px solid black;
+    font-size: 2em;
+  }
+
+  .SO .nama {
+    font-size: 2em;
+  }
+</style>
 </head>
 <body>
 <div class="wrapper">
@@ -12,9 +31,9 @@
     <div class="logo">Profile RPL</div>
     <div class="menu">
       <ul>
-        <li><a href="/">Beranda</a></li>
+        <li><a href="/" class="active">Beranda</a></li>
         
-        <li><a href="{{ route('pengumuman') }}" class="active">Pengumuman</a></li>
+        <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
         <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
         
         @if(Auth::check())
@@ -38,7 +57,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">PENGUMUMAN</h1>
+              <h1 align="center">Struktur Organisasi</h1>
             </li>
           </ul>
         </div>
@@ -77,22 +96,30 @@
       </div>
     </div>
     <div class="right-column">
-    @if($pengumuman)
-      @foreach($pengumuman as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>{{ $data->judul_pengumuman }}</h1>
-          <br>
-          <h2>{{ $data->jam_pengumuman }}, {{ $data->tanggal_pengumuman }}</h2>
+          <h1>Struktur Organisasi RPL SMKN 11 Bandung</h1>
         </div>
         <div class="right-column-content-content">
-          <p>{!!$data->isi_pengumuman !!}</p>
-        </div>
+          <div class="SO">
+            <p>{{ $kepala_ti->jabatan_guru }}</p>
+            <p><label class="nama">{{ $kepala_ti->nama_guru }}</label></p>
+          </div>
+
+          <div class="SO">
+            <p>{{ $kepala_rpl->jabatan_guru }}</p>
+            <p><label class="nama">{{ $kepala_rpl->nama_guru }}</label></p>
+          </div>
+
+         {{-- @if($guru_rpl)
+            @foreach($guru_rpl as $guru)
+              <div class="guru">
+                <p>{{ $guru->jabatan_guru }}</p>
+                <p><label class="nama">{{ $guru->nama_guru }}</label></p>
+              </div>
+            @endforeach
+          @endif --}}
       </div>
-      @endforeach
-    @else
-        <p>No Data is Available.</p>
-    @endif
     </div>
   </div>
 </div>

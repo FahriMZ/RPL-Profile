@@ -8,6 +8,7 @@ use App\Pengumuman;
 use App\File;
 use App\Pesan;
 use App\Guru;
+use App\Organisasi;
 
 use Illuminate\Http\Request;
 
@@ -57,5 +58,17 @@ class HomeController extends Controller
     public function download() {
         $file = File::All();
         return view('guest.file', compact('file'));
+    }
+
+    public function organisasi() {
+        
+        $kepala_ti = Guru::where('jabatan_guru', 'Ketua Kompetensi Keahlian TIK')->first();
+        $kepala_rpl = Guru::where('jabatan_guru', 'Kepala RPL')->first();
+
+        // $guru_rpl = Guru::where('jabatan_guru', 'Guru RPL')->get();
+
+        // dd($organisasi);
+        // return view('guest.struktur', compact('kepala_ti', 'kepala_rpl', 'guru_rpl'));
+        return view('guest.struktur', compact('kepala_ti', 'kepala_rpl'));
     }
 }
