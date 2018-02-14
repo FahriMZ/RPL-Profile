@@ -9,6 +9,7 @@ use App\File;
 use App\Pesan;
 use App\Guru;
 use App\Organisasi;
+use App\Peluang;
 
 use Illuminate\Http\Request;
 

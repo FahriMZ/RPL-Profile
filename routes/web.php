@@ -40,6 +40,11 @@ Route::resource('File', 'FileController');
 Route::get('/File/{File}/delete', 'FileController@destroy');
 Route::put('/File/{File}/edit', 'FileController@update');
 
+// File
+Route::resource('Peluang', 'PeluangController');
+Route::get('/Peluang/{Peluang}/delete', 'PeluangController@destroy');
+Route::put('/Peluang/{Peluang}/edit', 'PeluangController@update');
+
 // Pengumuman
 Route::resource('Pengumuman', 'PengumumanController');
 Route::get('/Pengumuman/{Pengumuman}/delete', 'PengumumanController@destroy');

@@ -48,6 +48,12 @@
                             <p>Pengumuman</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('Peluang') }}">
+                            <i class="nc-icon nc-bag"></i>
+                            <p>Lowongan Kerja</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
