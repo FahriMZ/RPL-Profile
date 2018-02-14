@@ -33,6 +33,9 @@
 		    @endforeach
 		    </tbody>
 		</table>
+		<div class="pull-right" style="padding-right: 25px;">
+            {{ $peluang->links() }}
+        </div>
 		</div>
 	</div>
 

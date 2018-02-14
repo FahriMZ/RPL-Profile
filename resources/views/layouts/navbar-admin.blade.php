@@ -1,10 +1,5 @@
 {{-- Sidebar --}}
         <div class="sidebar" data-image="{{ asset('images/sidebar-4.jpg') }}" data-color="blue" style="position: fixed; z-index: 99999">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
             <div class="sidebar-wrapper">
                 <div class="logo" style="padding-top: 15px; padding-bottom: 15px;">
                     <a href="/" class="simple-text">

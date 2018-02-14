@@ -35,6 +35,9 @@
 		    @endforeach
 		    </tbody>
 		</table>
+		<div class="pull-right" style="padding-right: 25px;">
+            {{ $pengumuman->links() }}
+        </div>
 		</div>
 	</div>
 

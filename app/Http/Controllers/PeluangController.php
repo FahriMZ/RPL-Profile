@@ -19,7 +19,7 @@ class PeluangController extends Controller
      */
     public function index()
     {
-        $peluang = Peluang::All();
+        $peluang = Peluang::simplePaginate(5);
         return view('peluang.index', compact('peluang'));
     }
 

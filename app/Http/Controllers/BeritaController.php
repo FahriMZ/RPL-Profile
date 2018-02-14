@@ -19,7 +19,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $berita = Berita::All();
+        $berita = Berita::simplePaginate(5);
         return view('berita.index', compact('berita'));
     }
 

@@ -52,7 +52,7 @@ Route::get('/Pengumuman/{Pengumuman}/delete', 'PengumumanController@destroy');
 Route::put('/Pengumuman/{Pengumuman}/edit', 'PengumumanController@update');
 
 // Guest
-Route::get('pengumuman', 'HomeController@pengumuman')->name('pengumuman');
+Route::get('pengumuman-terbaru', 'HomeController@pengumuman')->name('pengumuman');
 
 Route::get('tamu', 'HomeController@tamu')->name('tamu');
 Route::post('tamu', 'PesanController@storeAsGuest')->name('tamu');

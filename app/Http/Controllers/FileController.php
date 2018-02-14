@@ -19,7 +19,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $file = File::All();
+        $file = File::simplePaginate(5);
         return view('file.index', compact('file'));
     }
 

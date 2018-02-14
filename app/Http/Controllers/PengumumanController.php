@@ -14,7 +14,7 @@ class PengumumanController extends Controller
 
     public function index()
     {
-        $pengumuman = Pengumuman::All();
+        $pengumuman = Pengumuman::simplePaginate(5);
         return view('pengumuman.index', compact('pengumuman'));
     }
 

@@ -1,10 +1,7 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 
-@section('css')
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-@endsection
-
-@section('content')
+{{-- @section('content') --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 <div class="container" style="padding-top: 175px;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -73,4 +70,4 @@
         </div>
     </div>
 </div>
-@endsection
+{{-- @endsection --}}
