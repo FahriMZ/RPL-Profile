@@ -5,27 +5,11 @@
 <title>RPL Profile</title>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css">
-  .SO{
-    border: 2px solid black;
-    margin: 10px;
-    padding: 10px;
-    width: inherit;
-    height: inherit;
-  }
-
-  .SO .jabatan {
-    border-bottom: 2px solid black;
-    font-size: 2em;
-  }
-
-  .SO .nama {
-    font-size: 2em;
-  }
-</style>
 </head>
 <body>
+  <div id="scroll-up">
+  <a href="#" class=" scroll-up">Scroll to Top</a>
+</div>
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -34,7 +18,7 @@
         <li><a href="/" class="active">Beranda</a></li>
         
         <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
-        <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
+        <li><a href="{{ route('tamu') }}">Pesan</a></li>
         
         @if(Auth::check())
         <li class="nobg"><a href="{{ route('admin') }}">Admin</a></li>
@@ -98,31 +82,43 @@
     </div>
     <div class="right-column">
       <div class="right-column-content">
-        <div class="right-column-content-heading">
-          <h1>Struktur Organisasi RPL SMKN 11 Bandung</h1>
+      <!-- Coding dari sini -->
+      <div class="right-column-content-heading">
+          <h1>Struktur Organisasi</h1>
+          <h2>Rekayasa Perangkat Lunak</h2>
         </div>
-        <div class="right-column-content-content">
-          <div class="SO">
-            <p>{{ $kepala_ti->jabatan_guru }}</p>
-            <p><label class="nama">{{ $kepala_ti->nama_guru }}</label></p>
-          </div>
 
-          <div class="SO">
-            <p>{{ $kepala_rpl->jabatan_guru }}</p>
-            <p><label class="nama">{{ $kepala_rpl->nama_guru }}</label></p>
-          </div>
+      <div class="right-column-content-content">
+          <h3>Yudi Subekti</h3>
+          <h4>Kepala Laboratorium</h4>
 
-         {{-- @if($guru_rpl)
-            @foreach($guru_rpl as $guru)
-              <div class="guru">
-                <p>{{ $guru->jabatan_guru }}</p>
-                <p><label class="nama">{{ $guru->nama_guru }}</label></p>
-              </div>
-            @endforeach
-          @endif --}}
+          <br><p>Lahir: BANDUNG, 1976-02-19<br>
+          NUPTK: 5551754656200012<br>
+          Nip:</p>
+          <p>
+            Ditugaskan: 2014-07-14<br>
+            Nomor: 421.5/555-smkn-11/VII/2014
+          </p>
+
+        </div>
+        <div class="right-column-content-img-right right-column-content-img-right-margin-bottom-none"> <img src="images/image1.jpg" height="150" alt="banner" /> </div>
+        <div class="clear right-cloumn-content-border"></div>
+       <div class="right-column-content-content">
+          <h3>Ani Nuraeni</h3>
+          <h4>Ketua Program Keahlian</h4>
+
+          <br><p>Lahir: BANDUNG, 1980-12-27<br>
+          NUPTK: 8559758660300083<br>
+          Nip:</p>
+           <p>
+            Ditugaskan: 2014-07-14<br>
+            Nomor: 421.5/444-SMKN.11/VII/2014
+          </p>
+        </div>
+        <div class="right-column-content-img-right right-column-content-img-right-margin-bottom-none"> <img src="images/image2.jpg" height="150" alt="banner" /> </div>
+        <div class="clear right-cloumn-content-border"></div>
+      </div> 
       </div>
-    </div>
-  </div>
 </div>
 <div class="footer-wrapper">
   <div class="footer-top"></div>
@@ -153,5 +149,37 @@
 <div class="clear"></div>
 <div class="copyrights">Copyright (c) WEMALRIDE. Design by WeMalRiDe Company. 
 </div>
+<script type="text/javascript" src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var fixed = false;
+    $(document).scroll(function() {
+      if($(this).scrollTop() > 251) {
+        if(!fixed) {
+          fixed = true;
+          $('#scroll-up').show('slow', function() {
+            $('#scroll-up').css({
+              position: 'fixed', 
+              display: 'block'
+            });
+          });
+        }
+      }else { 
+        if(fixed) {
+          fixed = false;
+          $('#scroll-up').hide('slow', function() {
+            $('#scroll-up').css({
+              display: 'none'
+            });
+          });
+        }
+      }
+    });
+
+    $('#scroll-up').on('click', function() {
+      $('html, body').animate({ scrollTop : 0 }, 755);
+    });
+  }); 
+</script>
 </body>
 </html>

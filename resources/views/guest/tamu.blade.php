@@ -40,6 +40,9 @@ form {
 </style>
 </head>
 <body>
+  <div id="scroll-up">
+  <a href="#" class=" scroll-up">Scroll to Top</a>
+</div>
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -48,7 +51,7 @@ form {
         <li><a href="/">Beranda</a></li>
         
         <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
-        <li><a href="{{ route('tamu') }}" class="active">Buku Tamu</a></li>
+        <li><a href="{{ route('tamu') }}" class="active">Pesan</a></li>
         
         @if(Auth::check())
         <li class="nobg"><a href="{{ route('admin') }}">Admin</a></li>
@@ -71,7 +74,7 @@ form {
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">BUKU TAMU</h1>
+              <h1 align="center">PESAN</h1>
             </li>
           </ul>
         </div>
@@ -172,5 +175,36 @@ form {
 {{-- Alert --}}
 <script src="{{ asset('sweet-alert2/js/sweetalert2.js') }}"></script>
 @include('layouts.messages')
+<script type="text/javascript">
+  $(document).ready(function() {
+    var fixed = false;
+    $(document).scroll(function() {
+      if($(this).scrollTop() > 251) {
+        if(!fixed) {
+          fixed = true;
+          $('#scroll-up').show('slow', function() {
+            $('#scroll-up').css({
+              position: 'fixed', 
+              display: 'block'
+            });
+          });
+        }
+      }else { 
+        if(fixed) {
+          fixed = false;
+          $('#scroll-up').hide('slow', function() {
+            $('#scroll-up').css({
+              display: 'none'
+            });
+          });
+        }
+      }
+    });
+
+    $('#scroll-up').on('click', function() {
+      $('html, body').animate({ scrollTop : 0 }, 755);
+    });
+  }); 
+</script>
 </body>
 </html>

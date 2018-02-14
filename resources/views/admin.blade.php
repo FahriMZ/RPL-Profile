@@ -12,7 +12,7 @@
                         </div>
                     @endif
 
-                    Logged In.
+                    Logged In<span class="text-success fa fa-check"></span>
                 </div>
             </div>
         </div>

@@ -7,6 +7,10 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div id="scroll-up">
+  <a href="#" class=" scroll-up">Scroll to Top</a>
+</div>
+
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -15,7 +19,7 @@
         <li><a href="/" class="active">Beranda</a></li>
         
         <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
-        <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
+        <li><a href="{{ route('tamu') }}">Pesan</a></li>
         
         @if(Auth::check())
         <li class="nobg"><a href="{{ route('admin') }}">Admin</a></li>
@@ -125,5 +129,38 @@
 <div class="clear"></div>
 <div class="copyrights">Copyright (c) WEMALRIDE. Design by WeMalRiDe Company. 
 </div>
+
+<script type="text/javascript" src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var fixed = false;
+    $(document).scroll(function() {
+      if($(this).scrollTop() > 251) {
+        if(!fixed) {
+          fixed = true;
+          $('#scroll-up').show('slow', function() {
+            $('#scroll-up').css({
+              position: 'fixed', 
+              display: 'block'
+            });
+          });
+        }
+      }else { 
+        if(fixed) {
+          fixed = false;
+          $('#scroll-up').hide('slow', function() {
+            $('#scroll-up').css({
+              display: 'none'
+            });
+          });
+        }
+      }
+    });
+
+    $('#scroll-up').on('click', function() {
+      $('html, body').animate({ scrollTop : 0 }, 755);
+    });
+  }); 
+</script>
 </body>
 </html>

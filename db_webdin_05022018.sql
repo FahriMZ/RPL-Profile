@@ -32,7 +32,6 @@ CREATE TABLE `agenda` (
 
 insert  into `agenda`(`id`,`judul_agenda`,`tanggal_agenda`,`isi_agenda`) values 
 (2,'Ujian Sertifikasi Keahlian','2018-04-12','Ujian Sertifikasi Keahlian akan diadakan di kelas Bengkel TI pada tanggal 12-13 April 2018\r\n\r\nKet : Pengawasan dan Pengujian Eksternal\r\n'),
-(3,'UNBK','2018-04-02','Ujian Nasional Berbasis Komputer akan diadakan pada tanggal 2-5 April 2018 di kelas yang sudah ditentukan\r\n'),
 (4,'Pengumuman Kelulusan','2018-05-02','Hasil kelulusan akan dikirim Via POS'),
 (5,'Perpisahan','2018-05-03','Silahkan ditentukan sendiri gimana perpisahannya :v');
 
@@ -152,6 +151,25 @@ CREATE TABLE `password_resets` (
 
 /*Data for the table `password_resets` */
 
+/*Table structure for table `peluang_kerja` */
+
+DROP TABLE IF EXISTS `peluang_kerja`;
+
+CREATE TABLE `peluang_kerja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_pekerjaan` varchar(100) NOT NULL,
+  `nama_perusahaan` varchar(100) NOT NULL,
+  `tanggal_dipost` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deskripsi_pekerjaan` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `peluang_kerja` */
+
+insert  into `peluang_kerja`(`id`,`nama_pekerjaan`,`nama_perusahaan`,`tanggal_dipost`,`deskripsi_pekerjaan`) values 
+(1,'PHP Developer','PT. Citra Nusantara','2018-02-14 08:51:57','Dibutuhkan seorang Developer PHP Untuk pekerjaan ini.'),
+(2,'Ruby Developer','PT. Ruby Suci Perkasa','2018-02-14 09:59:46','Ini sebuah pekerjaan yang harus dikerjakan dalam waktu 2 hari. kalau tidak selesai, perjanjian kerja dibatalkan.');
+
 /*Table structure for table `pengumuman` */
 
 DROP TABLE IF EXISTS `pengumuman`;
@@ -210,7 +228,7 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values 
-(1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','5vlFidsbjn6u915LubWhZZZ8u1tk6Ih4UL4oziuB5jzuP4xTxuKE1IrDDf84','2018-02-05 06:09:22','2018-02-05 06:09:22');
+(1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','IMCyuWHUsusXFw8G4MFkLPzoVdJ8SF1Xe9Ajibc2BhN7aq3COpNfitZctKDY','2018-02-05 06:09:22','2018-02-05 06:09:22');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
