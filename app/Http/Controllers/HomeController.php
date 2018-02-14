@@ -72,4 +72,9 @@ class HomeController extends Controller
         // return view('guest.struktur', compact('kepala_ti', 'kepala_rpl', 'guru_rpl'));
         return view('guest.struktur', compact('kepala_ti', 'kepala_rpl'));
     }
+
+    public function peluang() {
+        $peluang = Peluang::All();
+        return view('guest.peluang', compact('peluang'));
+    }
 }

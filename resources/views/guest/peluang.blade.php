@@ -12,9 +12,9 @@
     <div class="logo">Profile RPL</div>
     <div class="menu">
       <ul>
-        <li><a href="/" class="active">Beranda</a></li>
+        <li><a href="/">Beranda</a></li>
         
-        <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
+        <li><a href="{{ route('pengumuman') }}" class="active">Pengumuman</a></li>
         <li><a href="{{ route('tamu') }}">Buku Tamu</a></li>
         
         @if(Auth::check())
@@ -38,7 +38,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">DOWNLOAD</h1>
+              <h1 align="center">LOWONGAN KERJA</h1>
             </li>
           </ul>
         </div>
@@ -54,7 +54,7 @@
             <li><a href="{{ route('agenda') }}">+ Agenda</a></li>
             <li><a href="{{ route('download') }}">+ Download</a></li>
             <li><a href="{{ route('organisasi') }}">+ Struktur Organisasi</a></li>
-            <li class="no-border"><a href="{{ route('lowongan') }}">+ Peluang Kerja</a></li>
+            <li class="no-border"><a href="{{ route('organisasi') }}">+ Peluang Kerja</a></li>
           </ul>
         </div>
         <div class="light-panel-bottom"></div>
@@ -78,19 +78,24 @@
       </div>
     </div>
     <div class="right-column">
-      @foreach($file as $data)
+      @if($peluang)
+      @foreach($peluang as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>{{ $data->nama_file }}</h1>
+          <h1>{{ $data->nama_pekerjaan }}</h1>
+          <br>
+          <h2>{{ $data->nama_perusahaan }}, {{ $data->tanggal_dipost }}</h2>
         </div>
         <div class="right-column-content-content">
-          <p>{{ $data->deskripsi_file }}</p>
-          <a href="{{ $data->link_file }}" target="_blank">Download File</a>
+          <p>{!!$data->deskripsi_pekerjaan !!}</p>
         </div>
-        <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
-        <div class="clear right-cloumn-content-border"></div>
       </div>
       @endforeach
+    @else
+        <p>No Data is Available.</p>
+    @endif
+        </div>
+      </div>
     </div>
   </div>
 </div>
