@@ -32,32 +32,32 @@ class HomeController extends Controller
     }
 
     public function agenda() {
-        $agenda = Agenda::All();
+        $agenda = Agenda::paginate(3);
         return view('guest.agenda', compact('agenda'));
     }
 
     public function berita() {
-        $berita = Berita::All();
+        $berita = Berita::paginate(3);
         return view('guest.berita', compact('berita'));
     }
 
     public function pengumuman() {
-        $pengumuman = Pengumuman::All();
+        $pengumuman = Pengumuman::paginate(3);
         return view('guest.pengumuman', compact('pengumuman'));
     }
 
     public function tamu() {
-        $pesan = Pesan::All();
+        $pesan = Pesan::paginate(3);
         return view('guest.tamu', compact('pesan'));
     }
 
     public function guru() {
-        $guru = Guru::All();
+        $guru = Guru::paginate(3);
         return view('guest.guru', compact('guru'));
     }
 
     public function download() {
-        $file = File::All();
+        $file = File::paginate(3);
         return view('guest.file', compact('file'));
     }
 
@@ -74,7 +74,11 @@ class HomeController extends Controller
     }
 
     public function peluang() {
-        $peluang = Peluang::All();
+        $peluang = Peluang::paginate(3);
         return view('guest.peluang', compact('peluang'));
+    }
+
+    public function kurikulum() {
+        return view('guest.kurikulum');
     }
 }

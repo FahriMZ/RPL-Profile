@@ -90,6 +90,7 @@ form {
             <li><a href="{{ route('agenda') }}">+ Agenda</a></li>
             <li><a href="{{ route('download') }}">+ Download</a></li>
             <li><a href="{{ route('organisasi') }}">+ Struktur Organisasi</a></li>
+            <li><a href="{{ route('kurikulum') }}">+ Kurikulum RPL</a></li>
             <li class="no-border"><a href="{{ route('lowongan') }}">+ Peluang Kerja</a></li>
           </ul>
         </div>

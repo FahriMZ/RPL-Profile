@@ -48,7 +48,6 @@
     @if(Auth::check())
         @include('layouts.navbar-admin');
     @else
-    {{-- @include('layouts.navbar'); --}}
         @yield('content')
     @endif
 </div>

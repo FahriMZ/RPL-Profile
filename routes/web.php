@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
     return redirect('home');
+    // Storage::disk('local')->put('file.txt', 'Contents');
 });
 
 Auth::routes();
@@ -62,3 +63,4 @@ Route::get('guru', 'HomeController@guru')->name('guru');
 Route::get('download', 'HomeController@download')->name('download');
 Route::get('organisasi', 'HomeController@organisasi')->name('organisasi');
 Route::get('lowongan', 'HomeController@peluang')->name('lowongan');
+Route::get('kurikulum', 'HomeController@kurikulum')->name('kurikulum');

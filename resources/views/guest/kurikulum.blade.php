@@ -42,7 +42,7 @@
         <div class="dark-panel-center">
           <ul>
             <li>
-              <h1 align="center">Agenda</h1>
+              <h1 align="center">Kurikulum RPL</h1>
             </li>
           </ul>
         </div>
@@ -83,26 +83,16 @@
       </div>
     </div>
     <div class="right-column">
-    @if($agenda)
-      @foreach($agenda as $data)
       <div class="right-column-content">
         <div class="right-column-content-heading">
-          <h1>{{ $data->judul_agenda }}</h1>
-          <h2>{{ $data->tanggal_agenda }}</h2>
         </div>
         <div class="right-column-content-content">
-          <p>{{ $data->isi_agenda }}</p>
+          <h2>Data not available</h2>
         </div>
       </div>
-      @endforeach
-    @else
-        <p>No Data is Available.</p>
-    @endif
-    {{ $agenda->links() }}
     </div>
   </div>
 </div>
-
 <div class="footer-wrapper">
   <div class="footer-top"></div>
   <div class="footer-center">
