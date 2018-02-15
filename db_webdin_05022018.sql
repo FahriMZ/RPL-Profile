@@ -26,14 +26,17 @@ CREATE TABLE `agenda` (
   `tanggal_agenda` date NOT NULL,
   `isi_agenda` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `agenda` */
 
 insert  into `agenda`(`id`,`judul_agenda`,`tanggal_agenda`,`isi_agenda`) values 
 (2,'Ujian Sertifikasi Keahlian','2018-04-12','Ujian Sertifikasi Keahlian akan diadakan di kelas Bengkel TI pada tanggal 12-13 April 2018\r\n\r\nKet : Pengawasan dan Pengujian Eksternal\r\n'),
 (4,'Pengumuman Kelulusan','2018-05-02','Hasil kelulusan akan dikirim Via POS'),
-(5,'Perpisahan','2018-05-03','Silahkan ditentukan sendiri gimana perpisahannya :v');
+(5,'Perpisahan','2018-05-03','Silahkan ditentukan sendiri gimana perpisahannya :v'),
+(6,'UNBK','2018-03-12','UNBK untuk kelas 12. Tanggalnya masih belum ditentukan.'),
+(7,'US','2018-02-14','US untuk kelulusan siswa kelas 12'),
+(8,'UJIKOM','2018-03-01','Pasti akan terjadi.');
 
 /*Table structure for table `berita` */
 
@@ -45,12 +48,17 @@ CREATE TABLE `berita` (
   `tanggal_berita` date NOT NULL,
   `isi_berita` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `berita` */
 
 insert  into `berita`(`id`,`judul_berita`,`tanggal_berita`,`isi_berita`) values 
-(2,'Kegiatan penjaringan kesehatan siswa kelas x pemeriksaan kadar hemoglobin','2017-01-01','Hemoglobin adalah metaloprotein (protein yang mengandung zat besi) di dalam sel darah merah yang berfungsi sebagai pengangkut oksigen dari paru-paru ke seluruh tubuh, pada mamalia dan hewan lainnya. Hemoglobin juga pengusung karbon dioksida kembali menuju paru-paru untuk dihembuskan keluar tubuh. Molekul hemoglobin terdiri dari globin, apoprotein, dan empat gugus heme, suatu molekul organik dengan satu atom besi.\r\nKegiatan ini bertujuan untuk mengukur bagaimana daya tahan tubuh siswa yang juga termasuk dalam program Sekolah Sehat SMKN 11 Bandung.');
+(2,'Kegiatan penjaringan kesehatan siswa kelas x pemeriksaan kadar hemoglobin','2017-01-01','Hemoglobin adalah metaloprotein (protein yang mengandung zat besi) di dalam sel darah merah yang berfungsi sebagai pengangkut oksigen dari paru-paru ke seluruh tubuh, pada mamalia dan hewan lainnya. Hemoglobin juga pengusung karbon dioksida kembali menuju paru-paru untuk dihembuskan keluar tubuh. Molekul hemoglobin terdiri dari globin, apoprotein, dan empat gugus heme, suatu molekul organik dengan satu atom besi.\r\nKegiatan ini bertujuan untuk mengukur bagaimana daya tahan tubuh siswa yang juga termasuk dalam program Sekolah Sehat SMKN 11 Bandung.'),
+(3,'fadslkflkak','2018-02-14','lkdasjasfjladsfjlasdf'),
+(4,'fadslkflkak','2018-02-14','lkdasjasfjladsfjlasdf'),
+(5,'fadslkflkak','2018-02-14','lkdasjasfjladsfjlasdf'),
+(6,'fadslkflkak','2018-02-14','lkdasjasfjladsfjlasdf'),
+(7,'fadslkflkak','2018-02-14','lkdasjasfjladsfjlasdf');
 
 /*Table structure for table `buku_pesan` */
 
@@ -89,14 +97,17 @@ CREATE TABLE `file_download` (
   `link_file` varchar(200) NOT NULL,
   `deskripsi_file` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `file_download` */
 
 insert  into `file_download`(`id`,`nama_file`,`link_file`,`deskripsi_file`) values 
 (1,'Skeleton','https://github-production-release-asset-2e65be.s3.amazonaws.com/1685764/c41b0730-8f46-11e4-8916-ef3f41ca9e8c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20180203%2Fus-east','A Skeleton (Custom Bootstrap) for web developer'),
 (2,'Countdown JS','https://codeload.github.com/rendro/countdown/zip/master','A Countdown for release time in javascript.'),
-(3,'Test Link','http://demo.scola.id/assets/courses/c74d97b01eae257e44aa9d5bade97baf/c6e19e830859f2cb9f7c8f8cacb8d2a6TUGAS%20PEMROGRAMAN%20WEB%20DINAMIS%20-%20Membuat%20Web%20Profile%20Jurusan%20RPL2.pdf','PDF Webdin');
+(3,'Test Link','http://demo.scola.id/assets/courses/c74d97b01eae257e44aa9d5bade97baf/c6e19e830859f2cb9f7c8f8cacb8d2a6TUGAS%20PEMROGRAMAN%20WEB%20DINAMIS%20-%20Membuat%20Web%20Profile%20Jurusan%20RPL2.pdf','PDF Webdin'),
+(4,'Countdown JS','https://codeload.github.com/rendro/countdown/zip/master','A Countdown for release time in javascript.'),
+(5,'Test Link','http://demo.scola.id/assets/courses/c74d97b01eae257e44aa9d5bade97baf/c6e19e830859f2cb9f7c8f8cacb8d2a6TUGAS%20PEMROGRAMAN%20WEB%20DINAMIS%20-%20Membuat%20Web%20Profile%20Jurusan%20RPL2.pdf','PDF Webdin'),
+(6,'Test Link','http://demo.scola.id/assets/courses/c74d97b01eae257e44aa9d5bade97baf/c6e19e830859f2cb9f7c8f8cacb8d2a6TUGAS%20PEMROGRAMAN%20WEB%20DINAMIS%20-%20Membuat%20Web%20Profile%20Jurusan%20RPL2.pdf','PDF Webdin');
 
 /*Table structure for table `guru` */
 
@@ -120,6 +131,25 @@ insert  into `guru`(`id`,`nip`,`nama_guru`,`deskripsi_guru`,`jabatan_guru`) valu
 (4,NULL,'Abdullah Afif Anwari,S.Kom','Guru Mata Pelajaran Prod. Rekayasa Perangkat Lunak','Guru RPL'),
 (5,'196202201989031007','Drs.Asep Eka Setia Priatna,M.Si','Guru Mata Pelajaran Prod. Rekayasa Perangkat Lunak','UPT ICT'),
 (6,NULL,'Yudi Subekti, S.Kom','Guru Mata Pelajaran Prod. Rekayasa Perangkat Lunak','Kepala RPL');
+
+/*Table structure for table `lowongan_kerja` */
+
+DROP TABLE IF EXISTS `lowongan_kerja`;
+
+CREATE TABLE `lowongan_kerja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_pekerjaan` varchar(100) NOT NULL,
+  `nama_perusahaan` varchar(100) NOT NULL,
+  `tanggal_dipost` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deskripsi_pekerjaan` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `lowongan_kerja` */
+
+insert  into `lowongan_kerja`(`id`,`nama_pekerjaan`,`nama_perusahaan`,`tanggal_dipost`,`deskripsi_pekerjaan`) values 
+(1,'PHP Developer','PT. Citra Nusantara','2018-02-14 08:51:57','Dibutuhkan seorang Developer PHP Untuk pekerjaan ini.'),
+(2,'Ruby Developer','PT. Ruby Suci Perkasa','2018-02-14 09:59:46','Ini sebuah pekerjaan yang harus dikerjakan dalam waktu 2 hari. kalau tidak selesai, perjanjian kerja dibatalkan.');
 
 /*Table structure for table `migrations` */
 
@@ -157,18 +187,19 @@ DROP TABLE IF EXISTS `peluang_kerja`;
 
 CREATE TABLE `peluang_kerja` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_pekerjaan` varchar(100) NOT NULL,
-  `nama_perusahaan` varchar(100) NOT NULL,
-  `tanggal_dipost` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `deskripsi_pekerjaan` text NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `deskripsi` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `peluang_kerja` */
 
-insert  into `peluang_kerja`(`id`,`nama_pekerjaan`,`nama_perusahaan`,`tanggal_dipost`,`deskripsi_pekerjaan`) values 
-(1,'PHP Developer','PT. Citra Nusantara','2018-02-14 08:51:57','Dibutuhkan seorang Developer PHP Untuk pekerjaan ini.'),
-(2,'Ruby Developer','PT. Ruby Suci Perkasa','2018-02-14 09:59:46','Ini sebuah pekerjaan yang harus dikerjakan dalam waktu 2 hari. kalau tidak selesai, perjanjian kerja dibatalkan.');
+insert  into `peluang_kerja`(`id`,`nama`,`deskripsi`) values 
+(1,'Software Engineer','Merupakan pekerjaan yang mengaharuskan anda dapat mengembangkan perangkat lunak dengan memenuhi kebutuhan klein. Seperti perangkat lunak untuk pendidikan, bisnis, hiburan games, telekomunikasi dll.'),
+(2,'Programmer','Membuat program sebagau perangkat lunak dari komputeer untuk memudahkan fungsi tertentu. Programmer dapat bekerja di segala bidang baik industri, pertelevisan, perbankan, media. Jadi peluangan kerja juruan rpl sangat banyak.'),
+(3,'IT Consultant','Anda bisa bekerja sebagai IT consultant yang beperan dalam perencanaan dan pengevaluasian penerapan IT pada sebuah organisasi. Jadi lowongan kerja smk jurusan rpl banyak, tinggal anda mencari informasinya.'),
+(4,'System Analyst / System Integrator','Yang nantinya anda harus berperan dalam melakukan analisis terhadapat sistem atau program yang berbasis teknologi dan informasi dalam suatu perusahaan dan membuat solusi yang integratif dan memanfaatkan perangkat lunak. Ini menjadi salah satu peluang kerja lulusan smk jurusan rpl.'),
+(5,'Web Engineer','Bertugas merancang dan membangun website beserta layanan dan fasilitas berjalan di atasnya dan bertanggung jawab dalam pemeliharaan website dan mengembangkanya,\r\n');
 
 /*Table structure for table `pengumuman` */
 
@@ -228,7 +259,7 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values 
-(1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','IMCyuWHUsusXFw8G4MFkLPzoVdJ8SF1Xe9Ajibc2BhN7aq3COpNfitZctKDY','2018-02-05 06:09:22','2018-02-05 06:09:22');
+(1,'Jangwen','jangwen@gmail.com','$2y$10$VkTxb/FyPkIwG6Wn.myIeenY3QcAGXFA8MEHVPCRyyRIgh0eI5ItW','z1eSM4v2pObO8D3j14yngz3KyNJ4pn3JUqofvZqaFK6HMK0hId50DlCUihvh','2018-02-05 06:09:22','2018-02-05 06:09:22');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -2,7 +2,7 @@
 
 @section('title', 'Daftar Guru')
 
-@section('content')
+@section('content_guest')
 @if($guru)
 @foreach($guru as $data)
   <div class="right-column-content">

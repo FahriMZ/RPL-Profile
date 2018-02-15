@@ -2,7 +2,7 @@
 
 @section('title', 'Lowongan Pekerjaan')
 
-@section('content')
+@section('content_guest')
 @if($peluang)
   @foreach($peluang as $data)
   <div class="right-column-content">

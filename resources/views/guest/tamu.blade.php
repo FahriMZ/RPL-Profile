@@ -37,7 +37,7 @@ form {
 </style>
 @endsection
 
-@section('content')
+@section('content_guest')
 <div class="right-column-content">
     <div class="right-column-content-heading">
       <h1>Kirim Pesan</h1>

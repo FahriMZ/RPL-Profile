@@ -2,7 +2,7 @@
 
 @section('title', 'Download Files')
 
-@section('content')
+@section('content_guest')
 @if($file)
 @foreach($file as $data)
 <div class="right-column-content">

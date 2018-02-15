@@ -8,13 +8,13 @@
 {{-- <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/> --}}
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/loader.css') }}">
 @yield('css')
 </head>
-<body>
-  <div id="scroll-up">
+<body><div id="scroll-up">
     <a href="#" class=" scroll-up">Scroll to Top</a>
   </div>
-
+@include('layouts.loader');
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -63,6 +63,7 @@
             <li><a href="{{ route('download') }}">+ Download</a></li>
             <li><a href="{{ route('kurikulum') }}">+ Kurikulum RPL</a></li>
             <li><a href="{{ route('lowongan') }}">+ Lowongan Kerja</a></li>
+            <li><a href="{{ route('peluang') }}">+ Peluang Kerja RPL</a></li>
             <li class="no-border"><a href="{{ route('organisasi') }}">+ Struktur Organisasi</a></li>
           </ul>
         </div>
@@ -99,7 +100,7 @@
         <div class="right-column-content-img-right"> <img src="images/rpl.jpg" width="85%" alt="banner" /> </div>
         <div class="clear right-cloumn-content-border"></div>
       </div> --}}
-      @yield('content')
+      @yield('content_guest')
     </div>
   </div>
 </div>
@@ -134,6 +135,8 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/loader.js') }}"></script>
+
 <script type="text/javascript">
   $(document).ready(function() {
     var fixed = false;

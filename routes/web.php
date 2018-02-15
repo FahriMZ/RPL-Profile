@@ -64,3 +64,4 @@ Route::get('download', 'HomeController@download')->name('download');
 Route::get('organisasi', 'HomeController@organisasi')->name('organisasi');
 Route::get('lowongan', 'HomeController@peluang')->name('lowongan');
 Route::get('kurikulum', 'HomeController@kurikulum')->name('kurikulum');
+Route::get('peluang-kerja', 'HomeController@peluangKerja')->name('peluang');

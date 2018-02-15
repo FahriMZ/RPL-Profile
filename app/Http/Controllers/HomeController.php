@@ -10,6 +10,9 @@ use App\Pesan;
 use App\Guru;
 use App\Organisasi;
 use App\Peluang;
+use App\PeluangKerja;
+
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -75,6 +78,11 @@ class HomeController extends Controller
     public function peluang() {
         $peluang = Peluang::orderBy('tanggal_dipost', 'desc')->paginate(3);
         return view('guest.peluang', compact('peluang'));
+    }
+
+    public function peluangKerja() {
+        $peluang = PeluangKerja::paginate(3);
+        return view('guest.peluangKerja', compact('peluang'));
     }
 
     public function kurikulum() {

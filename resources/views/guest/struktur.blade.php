@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Struktur Organisasi RPL')
+@section('title', 'Struktur Organisasi')
 
-@section('content')
+@section('content_guest')
 <div class="right-column-content">
   <!-- Coding dari sini -->
   <div class="right-column-content-heading">

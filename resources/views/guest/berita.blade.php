@@ -2,7 +2,7 @@
 
 @section('title', 'Berita')
 
-@section('content')
+@section('content_guest')
 @if($berita)
 @foreach($berita as $data)
   <div class="right-column-content">
