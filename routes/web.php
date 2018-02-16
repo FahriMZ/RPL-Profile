@@ -65,3 +65,6 @@ Route::get('organisasi', 'HomeController@organisasi')->name('organisasi');
 Route::get('lowongan', 'HomeController@peluang')->name('lowongan');
 Route::get('kurikulum', 'HomeController@kurikulum')->name('kurikulum');
 Route::get('peluang-kerja', 'HomeController@peluangKerja')->name('peluang');
+Route::get('kolom-guru', 'HomeController@kolomGuru')->name('kolom-guru');
+
+Route::get('search', 'HomeController@search');

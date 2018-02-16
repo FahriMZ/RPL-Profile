@@ -475,9 +475,7 @@ Copyrights Styles Start
 	margin-top:-5px;
 }
 
-.scroll-up {
-
-}
+/* Custom */
 
 #scroll-up {
 	position: fixed;
@@ -485,4 +483,15 @@ Copyrights Styles Start
 	right: 35px;
 	z-index: 9999999;
 	display: none;
+	padding: 7px;
+	background-color: white;
+}
+
+.custom-search {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.custom-search .search-input-textfield {
+	background-color: white;
 }

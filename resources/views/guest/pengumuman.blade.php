@@ -2,6 +2,15 @@
 
 @section('title', 'Pengumuman')
 
+@section('search')
+  <div class="search custom-search">
+    <input class="search-input-textfield" placeholder="Cari Pengumuman.."></input>
+    <div class="search-icon">
+      <img src="{{ asset('images/search-icon.png') }}">
+    </div>
+  </div>
+@endsection
+
 @section('content_guest')
 @if($pengumuman)
   @foreach($pengumuman as $data)

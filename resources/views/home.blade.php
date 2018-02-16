@@ -18,6 +18,7 @@
 @endsection
 
 @section('content_guest')
+
 <div class="right-column-content">
   <div class="right-column-content-heading">
     <h1>RPL ?</h1>

@@ -11,10 +11,11 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/loader.css') }}">
 @yield('css')
 </head>
-<body><div id="scroll-up">
+<body>
+@include('layouts.loader');
+  <div id="scroll-up">
     <a href="#" class=" scroll-up">Scroll to Top</a>
   </div>
-@include('layouts.loader');
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -62,6 +63,7 @@
             <li><a href="{{ route('guru') }}">+ Daftar Guru</a></li>
             <li><a href="{{ route('download') }}">+ Download</a></li>
             <li><a href="{{ route('kurikulum') }}">+ Kurikulum RPL</a></li>
+            <li><a href="{{ route('kolom-guru') }}">+ Kolom Guru</a></li>
             <li><a href="{{ route('lowongan') }}">+ Lowongan Kerja</a></li>
             <li><a href="{{ route('peluang') }}">+ Peluang Kerja RPL</a></li>
             <li class="no-border"><a href="{{ route('organisasi') }}">+ Struktur Organisasi</a></li>
@@ -88,6 +90,7 @@
       </div>
     </div>
     <div class="right-column">
+      @yield('search')
       {{-- <div class="right-column-content">
         <div class="right-column-content-heading">
           <h1>RPL ?</h1>
@@ -138,13 +141,15 @@
 <script type="text/javascript" src="{{ asset('js/loader.js') }}"></script>
 
 <script type="text/javascript">
+
+  // Scroll Up
   $(document).ready(function() {
     var fixed = false;
     $(document).scroll(function() {
       if($(this).scrollTop() > 251) {
         if(!fixed) {
           fixed = true;
-          $('#scroll-up').show('slow', function() {
+          $('#scroll-up').show('fast', function() {
             $('#scroll-up').css({
               position: 'fixed', 
               display: 'block'
@@ -154,7 +159,7 @@
       }else { 
         if(fixed) {
           fixed = false;
-          $('#scroll-up').hide('slow', function() {
+          $('#scroll-up').hide('fast', function() {
             $('#scroll-up').css({
               display: 'none'
             });
@@ -168,6 +173,8 @@
     });
   }); 
 </script>
+
+@yield('js')
 </body>
 </html>
 {{-- End Public --}}
