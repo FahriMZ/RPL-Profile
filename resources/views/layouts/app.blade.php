@@ -12,6 +12,7 @@
 @yield('css')
 </head>
 <body>
+  <label id="menuItem" style="display: none;">test</label>
 @include('layouts.loader');
   <div id="scroll-up">
     <a href="#" class=" scroll-up">Scroll to Top</a>
@@ -171,7 +172,7 @@
     $('#scroll-up').on('click', function() {
       $('html, body').animate({ scrollTop : 0 }, 755);
     });
-  }); 
+  });
 </script>
 
 @yield('js')
@@ -227,6 +228,7 @@
     </style>
 </head>
 <body>
+
 @include('layouts.loader');
 <div id="app wrapper">
     {{-- Sidebar --}}
@@ -257,27 +259,33 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ URL::to('Pesan') }}">
-                        <i class="nc-icon nc-email-83"></i>
-                        <p>Pesan</p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ URL::to('File') }}">
                         <i class="nc-icon nc-attach-87"></i>
                         <p>File Download</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ URL::to('Pengumuman') }}">
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>Pengumuman</p>
+                    <a class="nav-link" href="{{ URL::to('Guru') }}">
+                        <i class="nc-icon nc-circle-09"></i>
+                        <p>Guru</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ URL::to('Peluang') }}">
                         <i class="nc-icon nc-bag"></i>
                         <p>Lowongan Kerja</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('Pesan') }}">
+                        <i class="nc-icon nc-email-83"></i>
+                        <p>Pesan</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('Pengumuman') }}">
+                        <i class="nc-icon nc-bell-55"></i>
+                        <p>Pengumuman</p>
                     </a>
                 </li>
             </ul>

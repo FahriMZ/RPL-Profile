@@ -11,6 +11,7 @@ use App\Guru;
 use App\Organisasi;
 use App\Peluang;
 use App\PeluangKerja;
+use App\KolomGuru;
 
 use Illuminate\Http\Request;
 
@@ -88,42 +89,83 @@ class HomeController extends Controller
     }
 
     public function kolomGuru() {
-        return view('guest.kolom-guru');
+        $kolom = KolomGuru::orderBy('tanggal_dipost', 'desc')->paginate(3);
+        return view('guest.kolom-guru', compact('kolom'));
     }
 
     public function search()  {
-        if(isset($_GET)) {
+        if(isset($_GET['v']) && isset($_GET['q'])) {
             $view = $_GET['v'];
             $key = $_GET['q'];
+
+            if($key == '') { // Redirect kalau query kosong
+                switch ($view) {
+                    case base64_encode('a'): // Agenda
+                    return redirect('/agenda');
+                    break;
+                case base64_encode('b'): // Berita
+                    return redirect('/berita');
+                    break;
+                case base64_encode('f'): // File Download
+                    return redirect('/download');
+                    break;
+                case base64_encode('g'): // Data Guru
+                    return redirect('/guru');
+                    break;
+                case base64_encode('l'): // Lowongan Kerja
+                    return redirect('/lowongan');
+                    break;
+                case base64_encode('p'): // Peluang
+                    return redirect('/peluang-kerja');
+                    break;
+                case base64_encode('kg'): // Kolom Guru
+                    return redirect('/kolom-guru');
+                    break;
+                default:
+                    return redirect('/');
+                    break;
+                }
+            }
+
             switch ($view) {
-                case base64_encode('a'):
+                case base64_encode('a'): // Agenda
                     $agenda = Agenda::where('judul_agenda', 'LIKE', "%$key%")
                         ->orderBy('tanggal_agenda', 'desc')
                         ->paginate(3);
                     return view('guest.agenda', compact('agenda'));
                     break;
-
-                case base64_encode('b'):
+                case base64_encode('b'): // Berita
                     $berita = Berita::where('judul_berita', 'LIKE', "%$key%")
                         ->orderBy('tanggal_berita', 'desc')
                         ->paginate(3);
                     return view('guest.berita', compact('berita'));
                     break;
-                case base64_encode('f'):
+                case base64_encode('f'): // File Download
                     $file = File::where('nama_file', 'LIKE', "%$key%")->paginate(3);
                     return view('guest.file', compact('file'));
                     break;
-                case base64_encode('g'):
+                case base64_encode('g'): // Data Guru
                     $guru = Guru::where('nama_guru', 'LIKE', "%$key%")->paginate(3);
                     return view('guest.guru', compact('guru'));
                     break;
-                case base64_encode('l'):
+                case base64_encode('l'): // Lowongan Kerja
                     $peluang = Peluang::where('nama_pekerjaan', 'LIKE', "%$key%")
                         ->orderBy('tanggal_dipost', 'desc')
                         ->paginate(3);
                     return view('guest.peluang', compact('peluang'));
                     break;
-
+                case base64_encode('p'): // Lowongan Kerja
+                    $pengumuman = Pengumuman::where('judul_pengumuman', 'LIKE', "%$key%")
+                        ->orderBy('tanggal_pengumuman', 'desc')
+                        ->paginate(3);
+                    return view('guest.pengumuman', compact('pengumuman'));
+                    break;
+                case base64_encode('kg'): // Kolom Guru
+                    $kolom = KolomGuru::where('judul_karya', 'LIKE', "%$key%")
+                        ->orderBy('tanggal_dipost', 'desc')
+                        ->paginate(3);
+                    return view('guest.kolom-guru', compact('kolom'));
+                    break;
                 default:
                     return redirect('/');
                     break;

@@ -45,7 +45,7 @@
 
                                 @if ($errors->has('isi_berita'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('isi_agenda') }}</strong>
+                                        <strong>{{ $errors->first('isi_berita') }}</strong>
                                     </span>
                                 @endif
                             </div>

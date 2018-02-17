@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Peluang;
 
-class PeluangController extends Controller
+class PeluangController extends Controller // CONTROLLER UNTUK LOWONGAN KERJA, BUKAN PELUANG KERJA RPL.
 {
     public function __construct()
     {

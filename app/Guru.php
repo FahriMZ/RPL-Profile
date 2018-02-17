@@ -13,4 +13,8 @@ class Guru extends Model
     protected $fillable = [
         'id', 'nip', 'nama_guru', 'deskripsi_guru', 'jabatan_guru',
     ];
+
+    public function kolom() {
+    	return $this->hasMany('App\KolomGuru', 'id');
+    }
 }

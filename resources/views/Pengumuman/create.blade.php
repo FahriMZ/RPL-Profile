@@ -59,7 +59,7 @@
 
                                 @if ($errors->has('isi_pengumuman'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('isi_agenda') }}</strong>
+                                        <strong>{{ $errors->first('isi_pengumuman') }}</strong>
                                     </span>
                                 @endif
                             </div>

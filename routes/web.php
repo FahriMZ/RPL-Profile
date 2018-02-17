@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return redirect('home');
-    // Storage::disk('local')->put('file.txt', 'Contents');
+    // Storage::disk('local')->put('file.txt', 'Contents');\
 });
 
 Auth::routes();
@@ -50,6 +50,11 @@ Route::put('/Peluang/{Peluang}/edit', 'PeluangController@update');
 Route::resource('Pengumuman', 'PengumumanController');
 Route::get('/Pengumuman/{Pengumuman}/delete', 'PengumumanController@destroy');
 Route::put('/Pengumuman/{Pengumuman}/edit', 'PengumumanController@update');
+
+// Guru
+Route::resource('Guru', 'GuruController');
+Route::get('/Guru/{Guru}/delete', 'GuruController@destroy');
+Route::put('/Guru/{Guru}/edit', 'GuruController@update');
 
 // Guest
 Route::get('pengumuman-terbaru', 'HomeController@pengumuman')->name('pengumuman');

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Pengumuman;
 use Illuminate\Http\Request;
 
-class PengumumanController extends Controller
+class PengumumanController extends Controller 
 {
     public function __construct()
     {
