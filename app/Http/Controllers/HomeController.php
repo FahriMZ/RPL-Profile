@@ -12,6 +12,7 @@ use App\Organisasi;
 use App\Peluang;
 use App\PeluangKerja;
 use App\KolomGuru;
+use App\Rpl;
 
 use Illuminate\Http\Request;
 
@@ -30,7 +31,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $rpl = Rpl::find(1);
+        return view('home', compact('rpl'));
+    }
+
+    public function sejarah() {
+        $rpl = Rpl::find(1);
+        return view('guest.sejarah', compact('rpl'));
     }
 
     public function agenda() {

@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Provider untuk mengirim data rpl ke app.blade.php
+         */
+        App\Providers\ComposerServiceProvider::class,
+
     ],
 
     /*

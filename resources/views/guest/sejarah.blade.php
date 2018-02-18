@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Let\'s Code')
+@section('title', 'Sejarah RPL')
 
 @section('css')
   <style type="text/css">
@@ -21,19 +21,18 @@
 
 <div class="right-column-content">
   <div class="right-column-content-heading">
-    <h1>Tentang RPL</h1>
+    <h1>Sejarah RPL</h1>
   </div>
   <div class="column-content">
-    <p>{!! $rpl->deskripsi !!}</p>
+    <p>{!! $rpl->sejarah !!}</p>
   </div>
   <hr>
-  <div class="right-column-content-content baca-juga">
+  <div class="column-content baca-juga">
     <p>Lihat juga :</p>
     <ul>
+      <a href="/home"><li>Tentang RPL</li></a>
       <a href="/peluang-kerja"><li>Peluang Kerja RPL</li></a>
-      <a href="/sejarah"><li>Sejarah RPL</li></a>
     </ul>
   </div>
 </div>
 @endsection
-

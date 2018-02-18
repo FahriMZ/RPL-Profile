@@ -1,5 +1,5 @@
 @guest
-{{-- Public --}}
+{{-- Public / Guest --}}
 <!DOCTYPE>
 <html>
 <head>
@@ -12,7 +12,6 @@
 @yield('css')
 </head>
 <body>
-  <label id="menuItem" style="display: none;">test</label>
 @include('layouts.loader');
   <div id="scroll-up">
     <a href="#" class=" scroll-up">Scroll to Top</a>
@@ -79,12 +78,10 @@
             <li>
               <h1>Visi Misi</h1>
             </li>
-            <li class="date">Visi</li>
-            <li class="news">“Menjadi SMK mandiri yang berbudaya lingkungan dengan berbasis ICT”</li>
-            <li class="date">Misi<li>
-            <li class="news">Siap memberikan layanan pendidikan yang berkualitas tinggi dan menciptakan lingkungan yang sehat dan baikSiap memberikan layanan pendidikan yang berkualitas tinggi dan menciptakan lingkungan yang sehat dan baik.</li>
-            
-            <li class="news-no-border">Mewujudkan proses pembelajaran bagi peserta didik dengan memberi keteladanan, memotivasi, mengilhami, memberdayakan, dan membudayakan.</li>
+            <li class="date visi">Visi</li>
+            <li class="news visi">{{ $rpl->visi }}</li>
+            <li class="date misi">Misi<li>
+            <li class="news misi">{{ $rpl->misi }}</li>
           </ul>
         </div>
         <div class="dark-panel-bottom"></div>
