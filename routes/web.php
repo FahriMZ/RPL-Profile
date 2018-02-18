@@ -56,6 +56,11 @@ Route::resource('Guru', 'GuruController');
 Route::get('/Guru/{Guru}/delete', 'GuruController@destroy');
 Route::put('/Guru/{Guru}/edit', 'GuruController@update');
 
+// Kolom Guru
+Route::resource('KolomGuru', 'KolomController');
+Route::get('/KolomGuru/{KolomGuru}/delete', 'KolomController@destroy');
+Route::put('/KolomGuru/{KolomGuru}/edit', 'KolomController@update');
+
 // Guest
 Route::get('pengumuman-terbaru', 'HomeController@pengumuman')->name('pengumuman');
 

@@ -13,9 +13,9 @@
 </head>
 <body>
 @include('layouts.loader')
-  <div id="scroll-up">
-    <a href="#" class=" scroll-up">Scroll to Top</a>
-  </div>
+<div id="scroll-up">
+  <a href="#" class=" scroll-up">Scroll to Top</a>
+</div>
 <div class="wrapper">
   <div class="logo-menu-container">
     <div class="logo">Profile RPL</div>
@@ -133,7 +133,7 @@
   <div class="footer-bottom"></div>
 </div>
 <div class="clear"></div>
-<div class="copyrights">Copyright (c) WEMALRIDE. Design by WeMalRiDe Company. 
+<div class="copyrights">Copyright (c) 2018 - WEMALRIDE
 </div>
 
 <script type="text/javascript" src="{{ asset('light/js/core/jquery.3.2.1.min.js') }}"></script>
@@ -266,6 +266,12 @@
                     <a class="nav-link" href="{{ URL::to('Guru') }}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>Guru</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('KolomGuru') }}">
+                        <i class="nc-icon nc-bulb-63"></i>
+                        <p>Kolom Guru</p>
                     </a>
                 </li>
                 <li class="nav-item">
