@@ -62,7 +62,7 @@ Route::get('pengumuman-terbaru', 'HomeController@pengumuman')->name('pengumuman'
 Route::get('tamu', 'HomeController@tamu')->name('tamu');
 Route::post('tamu', 'PesanController@storeAsGuest')->name('tamu');
 
-Route::get('sejarah', 'HomeController@sejarah');
+Route::get('sejarah', 'HomeController@sejarah')->name('sejarah');
 Route::get('agenda', 'HomeController@agenda')->name('agenda');
 Route::get('berita', 'HomeController@berita')->name('berita');
 Route::get('guru', 'HomeController@guru')->name('guru');

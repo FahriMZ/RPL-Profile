@@ -26,8 +26,7 @@
   <div class="column-content">
     <p>{!! $rpl->sejarah !!}</p>
   </div>
-  <hr>
-  <div class="column-content baca-juga">
+  <div class="right-column-content-content baca-juga">
     <p>Lihat juga :</p>
     <ul>
       <a href="/home"><li>Tentang RPL</li></a>

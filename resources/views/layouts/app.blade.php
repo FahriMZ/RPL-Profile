@@ -12,7 +12,7 @@
 @yield('css')
 </head>
 <body>
-@include('layouts.loader');
+@include('layouts.loader')
   <div id="scroll-up">
     <a href="#" class=" scroll-up">Scroll to Top</a>
   </div>
@@ -66,6 +66,7 @@
             <li><a href="{{ route('kolom-guru') }}">+ Kolom Guru</a></li>
             <li><a href="{{ route('lowongan') }}">+ Lowongan Kerja</a></li>
             <li><a href="{{ route('peluang') }}">+ Peluang Kerja RPL</a></li>
+            <li><a href="{{ route('sejarah') }}">+ Sejarah RPL</a></li>
             <li class="no-border"><a href="{{ route('organisasi') }}">+ Struktur Organisasi</a></li>
           </ul>
         </div>
