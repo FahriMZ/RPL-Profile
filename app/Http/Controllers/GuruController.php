@@ -20,7 +20,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = Guru::simplePaginate(3);
+        $guru = Guru::all();
+        // $guru = Guru::simplePaginate(3);
         return view('guru.index', compact('guru'));
     }
 

@@ -21,7 +21,8 @@ class KolomController extends Controller
      */
     public function index()
     {
-        $kolom = KolomGuru::simplePaginate(3);
+        // $kolom = KolomGuru::simplePaginate(3);
+        $kolom = KolomGuru::all();
         return view('kolom.index', compact('kolom'));
     }
 
@@ -112,7 +113,7 @@ class KolomController extends Controller
     {
         $kolom = KolomGuru::find($id);
         // return $kolom;
-        $kolom->id_guru = Guru::select('id')->where('nama_guru', $request['nama_guru'])->get();
+        $kolom->id_guru = Guru::select('id')->where('nama_guru', $request['nama_guru'])->first()['id'];;
         $kolom->judul_karya = $request['judul_karya'];
         $kolom->karya = $request['karya'];
         $kolom->tipe_karya = $request['tipe_karya'];

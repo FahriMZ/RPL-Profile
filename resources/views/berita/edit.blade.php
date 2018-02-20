@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css_admin')
+{{-- WYSIWYG Textarea Plugins --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('summernote/summernote.css') }}">
+@endsection
+
 @section('content')
 
 <div class="panel panel-default">
@@ -42,7 +47,7 @@
                             <label for="isi_berita" class="col-md-4 control-label">Isi Berita</label>
 
                             <div class="col-md-6">
-                                <textarea name="isi_berita" rows="10" id="isi_berita" class="form-control" required>{{ $berita->isi_berita }}</textarea>
+                                <textarea name="isi_berita" rows="10" id="isi_berita" class="form-control" required>{!! $berita->isi_berita !!}</textarea>
 
                                 @if ($errors->has('isi_berita'))
                                     <span class="help-block">
@@ -64,4 +69,15 @@
                 </div>
             </div>
 
+@endsection
+
+@section('js_admin')
+    <script type="text/javascript" src="{{ asset('summernote/summernote.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#isi_berita').summernote({
+                height: 300,
+            });
+        });
+    </script>
 @endsection

@@ -3,8 +3,6 @@
 @section('css_admin')
 {{-- WYSIWYG Textarea Plugins --}}
 <link rel="stylesheet" type="text/css" href="{{ asset('summernote/summernote.css') }}">
-
-
 @endsection
 
 @section('content')

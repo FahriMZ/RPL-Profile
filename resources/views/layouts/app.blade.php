@@ -199,6 +199,9 @@
     {{-- Alerts --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('sweet-alert2/css/sweetalert2.min.css') }}">
 
+    <!-- DataTable Plugin -->
+    <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
+
     {{-- Custom --}}
     {{-- @if(Auth::check()) --}}
     <!-- CSS Files -->
@@ -235,17 +238,17 @@
     <div class="sidebar" data-image="{{ asset('images/sidebar-4.jpg') }}" data-color="blue">
         <div class="sidebar-wrapper">
             <div class="logo" style="padding-top: 15px; padding-bottom: 15px;">
-                <a href="/" class="simple-text">
+                <a href="/admin" class="simple-text">
                     {{ config('app.name', 'RPL-Profile') }}
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item" id="home">
+                {{-- <li class="nav-item" id="home">
                     <a class="nav-link" href="/admin">
                         <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Dashboard</p>
+                        <p>Tentang RPL</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item" id="agenda">
                     <a class="nav-link" href="{{ URL::to('Agenda') }}">
                         <i class="nc-icon nc-bullet-list-67"></i>
@@ -280,6 +283,12 @@
                     <a class="nav-link" href="{{ URL::to('Peluang') }}">
                         <i class="nc-icon nc-bag"></i>
                         <p>Lowongan Kerja</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ URL::to('PeluangKerja') }}">
+                        <i class="nc-icon nc-bag"></i>
+                        <p>Peluang Kerja</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -378,6 +387,10 @@
 <script src="{{ asset('light/js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="{{ asset('light/js/plugins/bootstrap-switch.js') }}"></script>
+
+{{-- Plugin Datatable --}}
+<script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
 
 @yield('js_admin')
 </body>

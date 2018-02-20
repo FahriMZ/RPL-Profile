@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css_admin')
+{{-- WYSIWYG Textarea Plugins --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('summernote/summernote.css') }}">
+@endsection
+
 @section('content')
 
 <div class="panel panel-default">
@@ -42,7 +47,7 @@
                             <label for="deskripsi_pekerjaan" class="col-md-4 control-label">Deskripsi Pekerjaan</label>
 
                             <div class="col-md-6">
-                                <textarea name="deskripsi_pekerjaan" rows="10" id="deskripsi_pekerjaan" class="form-control" required>{{ $peluang->deskripsi_pekerjaan }}</textarea>
+                                <textarea name="deskripsi_pekerjaan" rows="10" id="deskripsi_pekerjaan" class="form-control" required>{!! $peluang->deskripsi_pekerjaan !!}</textarea>
 
                                 @if ($errors->has('deskripsi_pekerjaan'))
                                     <span class="help-block">
@@ -64,4 +69,15 @@
                 </div>
             </div>
 
+@endsection
+
+@section('js_admin')
+    <script type="text/javascript" src="{{ asset('summernote/summernote.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#deskripsi_pekerjaan').summernote({
+                height: 300,
+            });
+        });
+    </script>
 @endsection

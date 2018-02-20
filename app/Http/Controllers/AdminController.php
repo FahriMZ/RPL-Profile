@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Rpl;
+
 class AdminController extends Controller
 {
     //
@@ -19,6 +21,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $rpl = Rpl::find(1);
+        return view('admin', compact('rpl'));
     }
 }

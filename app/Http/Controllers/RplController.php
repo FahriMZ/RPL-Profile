@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Rpl;
+
 class RplController extends Controller
 {
     /**
@@ -66,9 +68,20 @@ class RplController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $rpl = Rpl::find(1);
+        // return $rpl;
+        $rpl->visi = $request['visi'];
+        $rpl->misi = $request['misi'];
+        $rpl->deskripsi = $request['deskripsi'];
+        $rpl->sejarah = $request['sejarah'];
+
+        if($rpl->save()) {
+            return redirect('/admin')->with('success', 'Data berhasil diubah');
+        }else{
+            return redirect()->back()->with('error', 'Edit data gagal');
+        }
     }
 
     /**

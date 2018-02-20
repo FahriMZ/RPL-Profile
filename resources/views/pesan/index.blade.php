@@ -7,7 +7,7 @@
             <p class="card-category">Kelola Pesan : </p>
         </div>
         <div class="card-body table-full-width table-responsive">
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-striped" id="tablePesan">
             <thead>
                 <tr>
                     <td>ID</td>
@@ -30,11 +30,19 @@
 
             </tbody>
         </table>
-        <div class="pull-right" style="padding-right: 25px;">
+        {{-- <div class="pull-right" style="padding-right: 25px;">
             {{ $pesan->links() }}
-        </div>
+        </div> --}}
         </div>
     </div>
 
         <a class="btn btn-success pull-right" href="{{ URL::to('Pesan/create') }}" style="margin-bottom:10px"><i class="fa fa-plus"></i></a>
+@endsection
+
+@section('js_admin')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#tablePesan").DataTable();
+    });
+</script>
 @endsection

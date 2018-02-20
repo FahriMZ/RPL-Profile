@@ -10,7 +10,7 @@
 				<p >Dipost pada <span class="text-info">{{ $peluang->tanggal_dipost }}</span></p>
 				<p>Oleh <span class="text-success">{{ $peluang->nama_perusahaan }}</span></p>
 				<hr>
-				<p>{{ $peluang->deskripsi_pekerjaan }}</p>
+				<p>{!! $peluang->deskripsi_pekerjaan !!}</p>
 			</div>
 
 			<div class="panel-footer pull-right">

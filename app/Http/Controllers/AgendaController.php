@@ -20,7 +20,8 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        $agenda = Agenda::simplePaginate(5);
+        // $agenda = Agenda::simplePaginate(5);
+        $agenda = Agenda::all();
         return view('agenda.index', compact('agenda'));
     }
 

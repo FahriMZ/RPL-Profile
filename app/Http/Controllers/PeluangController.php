@@ -19,7 +19,8 @@ class PeluangController extends Controller // CONTROLLER UNTUK LOWONGAN KERJA, B
      */
     public function index()
     {
-        $peluang = Peluang::simplePaginate(5);
+        // $peluang = Peluang::simplePaginate(5);
+        $peluang = Peluang::all();
         return view('peluang.index', compact('peluang'));
     }
 

@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::put('/admin', 'RplController@update')->name('admin');
 Route::get('register', 'HomeController@index')->name('register');
 
 // Agenda

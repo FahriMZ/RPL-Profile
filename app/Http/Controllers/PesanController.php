@@ -19,7 +19,8 @@ class PesanController extends Controller
      */
     public function index()
     {
-        $pesan = Pesan::simplePaginate(5);
+        // $pesan = Pesan::simplePaginate(5);
+        $pesan = Pesan::all();
         return view('pesan.index', compact('pesan'));
     }
 

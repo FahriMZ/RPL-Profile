@@ -7,7 +7,7 @@
             <p class="card-category">Kelola Lowongan Kerja : </p>
         </div>
         <div class="card-body table-full-width table-responsive">
-		<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped" id="tablePeluang">
 		    <thead>
 		        <tr>
 		            <td>ID</td>
@@ -33,11 +33,19 @@
 		    @endforeach
 		    </tbody>
 		</table>
-		<div class="pull-right" style="padding-right: 25px;">
+		{{-- <div class="pull-right" style="padding-right: 25px;">
             {{ $peluang->links() }}
-        </div>
+        </div> --}}
 		</div>
 	</div>
 
 		<a class="btn btn-success pull-right" href="{{ URL::to('Peluang/create') }}" style="margin-bottom:10px"><i class="fa fa-plus"></i></a>
+@endsection
+
+@section('js_admin')
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#tablePeluang").DataTable();
+	});
+</script>
 @endsection

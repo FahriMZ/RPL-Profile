@@ -7,7 +7,7 @@
             <p class="card-category">Kelola Agenda : </p>
         </div>
         <div class="card-body table-full-width table-responsive">
-		<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped" id="tableAgenda">
 		    <thead>
 		        <tr>
 		            <td>ID</td>
@@ -33,11 +33,19 @@
 		    @endforeach
 		    </tbody>
 		</table>
-		<div class="pull-right" style="padding-right: 25px;">
+		{{-- <div class="pull-right" style="padding-right: 25px;">
             {{ $agenda->links() }}
-        </div>
+        </div> --}}
 		</div>
 	</div>
 
 		<a class="btn btn-success pull-right" href="{{ URL::to('Agenda/create') }}" style="margin-bottom:10px"><i class="fa fa-plus"></i></a>
+@endsection
+
+@section('js_admin')
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#tableAgenda").DataTable();
+	});
+</script>
 @endsection
