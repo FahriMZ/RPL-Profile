@@ -23,7 +23,7 @@
       <h2>{{ $data->tanggal_berita }}</h2>
     </div>
     <div class="column-content">
-      <p>{{ $data->isi_berita }}</p>
+      <p>{!! $data->isi_berita !!}</p>
     </div>
   </div>
   @endforeach

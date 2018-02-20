@@ -74,11 +74,11 @@ class HomeController extends Controller
         $kepala_ti = Guru::where('jabatan_guru', 'Ketua Kompetensi Keahlian TIK')->first();
         $kepala_rpl = Guru::where('jabatan_guru', 'Kepala RPL')->first();
 
-        // $guru_rpl = Guru::where('jabatan_guru', 'Guru RPL')->get();
+        $guru = Guru::where('jabatan_guru', 'Guru RPL')->get();
 
         // dd($organisasi);
         // return view('guest.struktur', compact('kepala_ti', 'kepala_rpl', 'guru_rpl'));
-        return view('guest.struktur', compact('kepala_ti', 'kepala_rpl'));
+        return view('guest.struktur', compact('kepala_ti', 'kepala_rpl', 'guru'));
     }
 
     public function peluang() {

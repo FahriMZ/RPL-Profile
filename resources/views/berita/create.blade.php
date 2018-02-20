@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('css_admin')
+{{-- WYSIWYG Textarea Plugins --}}
+<link rel="stylesheet" type="text/css" href="{{ asset('summernote/summernote.css') }}">
+
+
+@endsection
+
 @section('content')
 
 <div class="panel panel-default">
@@ -63,4 +70,16 @@
                 </div>
             </div>
 
+@endsection
+
+
+@section('js_admin')
+    <script type="text/javascript" src="{{ asset('summernote/summernote.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#isi_berita').summernote({
+                height: 300,
+            });
+        });
+    </script>
 @endsection

@@ -224,6 +224,8 @@
             background-color: #f5f8fa;
         }
     </style>
+
+    @yield('css_admin')
 </head>
 <body>
 
@@ -376,6 +378,8 @@
 <script src="{{ asset('light/js/light-bootstrap-dashboard.js?v=2.0.1') }}" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="{{ asset('light/js/plugins/bootstrap-switch.js') }}"></script>
+
+@yield('js_admin')
 </body>
 </html>
 {{-- End Admin --}}

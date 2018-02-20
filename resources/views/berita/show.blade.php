@@ -7,7 +7,7 @@
 			</div>
 
 			<div class="panel-body">
-				<p>{{ $berita->isi_berita }}</p>
+				<p>{!! $berita->isi_berita !!}</p>
 			</div>
 
 			<div class="panel-footer pull-right">
