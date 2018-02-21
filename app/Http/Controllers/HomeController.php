@@ -161,11 +161,10 @@ class HomeController extends Controller
                         ->paginate(3);
                     return view('guest.peluang', compact('peluang'));
                     break;
-                case base64_encode('p'): // Lowongan Kerja
-                    $pengumuman = Pengumuman::where('judul_pengumuman', 'LIKE', "%$key%")
-                        ->orderBy('tanggal_pengumuman', 'desc')
+                case base64_encode('p'): // Peluang Kerja
+                    $peluang = PeluangKerja::where('nama', 'LIKE', "%$key%")
                         ->paginate(3);
-                    return view('guest.pengumuman', compact('pengumuman'));
+                    return view('guest.peluangKerja', compact('peluang'));
                     break;
                 case base64_encode('kg'): // Kolom Guru
                     $kolom = KolomGuru::where('judul_karya', 'LIKE', "%$key%")

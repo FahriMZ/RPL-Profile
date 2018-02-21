@@ -42,7 +42,7 @@ Route::resource('File', 'FileController');
 Route::get('/File/{File}/delete', 'FileController@destroy');
 Route::put('/File/{File}/edit', 'FileController@update');
 
-// File
+// Lowongan
 Route::resource('Peluang', 'PeluangController');
 Route::get('/Peluang/{Peluang}/delete', 'PeluangController@destroy');
 Route::put('/Peluang/{Peluang}/edit', 'PeluangController@update');
@@ -56,6 +56,11 @@ Route::put('/Pengumuman/{Pengumuman}/edit', 'PengumumanController@update');
 Route::resource('Guru', 'GuruController');
 Route::get('/Guru/{Guru}/delete', 'GuruController@destroy');
 Route::put('/Guru/{Guru}/edit', 'GuruController@update');
+
+// Peluang Kerja
+Route::resource('PeluangKerja', 'PeluangKerjaController');
+Route::get('/PeluangKerja/{PeluangKerja}/delete', 'PeluangKerjaController@destroy');
+Route::put('/PeluangKerja/{PeluangKerja}/edit', 'PeluangKerjaController@update');
 
 // Kolom Guru
 Route::resource('KolomGuru', 'KolomController');
